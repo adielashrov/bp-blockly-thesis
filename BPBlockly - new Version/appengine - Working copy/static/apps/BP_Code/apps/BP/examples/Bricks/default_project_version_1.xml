@@ -1,0 +1,433 @@
+<xml xmlns="http://www.w3.org/1999/xhtml"><block type="bp_repeat_forever" x="598" y="-690"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="key_pressed"><title name="dropdown">'keydown-37'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="acceleratePad"><title name="menu">'acceleratePadLeft'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="acceleratePad"><title name="menu">'acceleratePadLeft'</title></block></value></block></next></block></next></block></statement></block><block type="bp_repeat_forever" x="163" y="-687"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ball_at"><title name="menu">'ballAtLeft'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="reverse_direction"><title name="menu">'reverseBallXDirection'</title></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="168" y="-578"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ball_at"><title name="menu">'ballAtRight'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="reverse_direction"><title name="menu">'reverseBallXDirection'</title></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="599" y="-554"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="key_pressed"><title name="dropdown">'keydown-39'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="acceleratePad"><title name="menu">'acceleratePadRight'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="acceleratePad"><title name="menu">'acceleratePadRight'</title></block></value></block></next></block></next></block></statement></block><block type="bp_repeat_forever" x="168" y="-471"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ball_at"><title name="menu">'ballAtTop'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="reverse_direction"><title name="menu">'reverseBallYDirection'</title></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="993" y="-417"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ball_collides_with"><title name="menu">'ballCollidesWithPinkBrick'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="destroyCurrentBricks"></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="597" y="-411"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="key_pressed"><title name="dropdown">'keydown-32'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="startGame"></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="178" y="-373"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="startGame"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="initScore"></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="592" y="-304"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ballHitsBrick"><title name="menu">'horizontalCollisionOfBallAndBrick'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="reverse_direction"><title name="menu">'reverseBallYDirection'</title></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="171" y="-266"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ballHitPad"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="reverse_direction"><title name="menu">'reverseBallYDirection'</title></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="1012" y="-216"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="destroyCurrentBricks"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="increaseScore"></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="585" y="-203"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ballHitsBrick"><title name="menu">'verticalCollisionOfBallAndBrick'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="reverse_direction"><title name="menu">'reverseBallXDirection'</title></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="171" y="-164"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ballHitPad"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="changeXSpeedRelativeToPad"></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="1074" y="-82"><statement name="DO"><block type="bp_breakupon" inline="false"><statement name="code"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ball_at"><title name="menu">'ballAtBottom'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="gameStatus"><title name="menu">'gameLost'</title></block></value></block></next></block></statement><value name="events"><block type="reverse_direction"><title name="menu">'reverseBallYDirection'</title></block></value></block></statement></block><block type="bp_repeat_forever" x="594" y="-62"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ball_collides_with"><title name="menu">'ballCollidesWithPinkBrick'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="bp_event_setText" inline="false"><value name="EVENT"><block type="text"><title name="TEXT">Pink Collison block</title></block></value></block></value><next><block type="bp_breakupon" inline="false"><statement name="code"><block type="bp_repeat_forever"><statement name="DO"><block type="bp_dowhileblocking" inline="false"><value name="events"><block type="gameStatus"><title name="menu">'gameLost'</title></block></value><statement name="code"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ball_at"><title name="menu">'ballAtBottom'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="reverse_direction"><title name="menu">'reverseBallYDirection'</title></block></value></block></next></block></statement></block></statement></block></statement><value name="events"><block type="ball_collides_with"><title name="menu">'ballCollidesWithPinkBrick'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="bp_event_setText" inline="false"><value name="EVENT"><block type="text"><title name="TEXT">Pink Collison release</title></block></value></block></value></block></next></block></next></block></next></block></statement></block><htmltext>//<!--<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript;version=1.7">
+		function windowLocation() {
+			var tProtocol = window.location.protocol;
+			if((tProtocol == 'http:') || (tProtocol == 'http:')) {
+				return "web";
+			}
+			else if(tProtocol == 'file:') {
+				return "file";
+			}
+		};
+	</script>
+	<script type="text/javascript;version=1.7">
+		if(windowLocation() == "web") {
+			document.write("<link id=\"linkToStyle\" href=\"\/static\/apps\/BP_Code\/apps\/BP\/examples\/Bricks\/styles.css\" rel=\"stylesheet\">");
+		}
+		else {
+			document.write("<link id=\"linkToStyle\" href=\"examples\\Bricks\\styles.css\" rel=\"stylesheet\">");
+		}
+	</script>
+    <title>BrikBrok - my brick breaker HTML 5</title>
+</head>
+<body>
+    <div class="grid">
+        <header>
+            <h1>
+                BP BrikBrok
+			</h1>
+            <ul>
+                <li><a href="#gameZone" id="newGame" style="margin-right:25px">New game</a></li>
+				<li style="display:none;"><a href="#gameZone" id="wormHole" style="display:none;">Wormhole Mode</a></li>
+            </ul>
+        </header>
+        <div id="gameZone">
+            <canvas id="backgroundCanvas">
+                Your browser doesn't support HTML5. 
+            </canvas>
+            <svg id="svgRoot">
+				<circle cx="100" cy="50" r="10" id="ball" />
+                <rect id="pad" height="15px" width="225px" x="200" y="150" rx="10" ry="20"/>
+            </svg>
+            <div id="stats">
+            </div>
+            <div id="message">Victory!</div>
+        </div>
+        <footer>
+            <div style="height: 50px;width=100%">
+				<div style="float:left; width=33%; ">
+					<h2 style="margin-left:15px">Based on a tutorial by David Catuhe</h2>
+				</div>
+				<div id="scoreDiv" style="float:left; width=33%; margin-left:32%;">
+					<h2 id="scoreTextZone" style="font-size: 175%; color:black;">Score:  0 </h2>
+				</div>
+				<div id="debugTextDiv" style="float:right; width=33%; margin-right:5px; ">
+					<h2 id="debugTextZone" style="font-size: 150%; color:grey;">Text will appear here</h2>
+				</div>
+				<!--border-style:solid; border-width: 2px;-->
+				<!--<div style="float:left;">
+					<h2 style="margin-left:15px">Based on a tutorial by David Catuhe</h2>
+				</div>
+				<div id="scoreDiv" style="float:left; margin-left:30%; height:100px; width 100px; border-style:solid; border-width: 2px;">
+					<h2 id="scoreTextZone" style="float:left;font-size: 175%; color:black;">Score: </h2>
+					<h2 id="scoreTextZone2" style="float:left;font-size: 175%; color:black;"> 0 </h2>
+				</div>
+				<div id="debugTextDiv" style="float:left; margin-left:35%; height:100px; ">
+					<h2 id="debugTextZone" style="font-size: 150%; color:grey;text-align:center;">Debug text will appear here</h2>
+				</div>-->
+			
+		
+    
+	<script src="/static/apps/BP_Code/apps/BP/examples/Bricks/mouse.js" type="text/javascript;version=1.7"></script>
+    <script src="/static/apps/BP_Code/apps/BP/examples/Bricks/background.js" type="text/javascript;version=1.7"></script>
+    <script src="/static/apps/BP_Code/apps/BP/examples/Bricks/game.js" type="text/javascript;version=1.7"></script>
+	<script src="examples%5CBricks%5Cmouse.js" type="text/javascript;version=1.7"></script>
+    <script src="examples%5CBricks%5Cbackground.js" type="text/javascript;version=1.7"></script>
+    <script src="examples%5CBricks%5Cgame.js" type="text/javascript;version=1.7"></script>
+
+
+//--&gt;</htmltext><projectblocks>//<!--custom = {};
+
+custom.startGame = {
+    helpUrl: '../../../../blocks_API/generic_event_help.html?event=Start_game',
+    init: function() {
+        this.setColour(230);
+        this.appendDummyInput()
+            .appendTitle("Start game");
+        this.setOutput(true, 'event');
+        this.setTooltip('Start game event');
+    }
+};
+
+Blockly.JavaScript.startGame = function() {
+    return ['"startGame"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.acceleratePad = {
+    helpUrl: '../../../../blocks_API/generic_event_help.html?event=Accelerate_pad',
+    init: function() {
+        this.setColour(230);
+        this.appendDummyInput()
+            .appendTitle("Accelerate Pad");
+        this.appendDummyInput()
+            .appendTitle(new Blockly.FieldDropdown([
+                ["left", "'acceleratePadLeft'"],
+                ["right", "'acceleratePadRight'"]
+            ]), "menu");
+        this.setInputsInline(true);
+        this.setOutput(true, 'event');
+        this.setTooltip('');
+    }
+};
+
+Blockly.JavaScript.acceleratePad = function() {
+    var dropdown_menu = this.getTitleValue('menu');
+    // TODO: Assemble JavaScript into code variable.
+    var code = dropdown_menu;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.color_brick = {
+    helpUrl: '../../../../blocks_API/generic_event_help.html?event=Color_brick',
+    init: function() {
+        this.setColour(230);
+        this.appendDummyInput()
+            .appendTitle("Color brick ");
+        this.appendDummyInput()
+            .appendTitle(new Blockly.FieldDropdown([
+                ["green", "'colorBrickGreen'"],
+                ["gold", "'colorBrickGold'"],
+                ["blue", "'colorBrickBlue'"],
+                ["red", "'colorBrickRed'"]
+            ]), "menu");
+        this.setInputsInline(true);
+        this.setOutput(true, 'event');
+        this.setTooltip('');
+    }
+};
+
+Blockly.JavaScript.color_brick = function() {
+    var dropdown_menu = this.getTitleValue('menu');
+    // TODO: Assemble JavaScript into code variable.
+    var code = dropdown_menu;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.reverse_direction = {
+    helpUrl: '../../../../blocks_API/generic_event_help.html?event=Reverse_ball',
+    init: function() {
+        this.setColour(230);
+        this.appendDummyInput()
+            .appendTitle("Reverse ball");
+        this.appendDummyInput()
+            .appendTitle(new Blockly.FieldDropdown([
+                ["x", "'reverseBallXDirection'"],
+                ["y", "'reverseBallYDirection'"]
+            ]), "menu");
+        this.appendDummyInput()
+            .appendTitle("direction");
+        this.setInputsInline(true);
+        this.setOutput(true, "event");
+        this.setTooltip('');
+    }
+};
+
+Blockly.JavaScript.reverse_direction = function() {
+    var dropdown_menu = this.getTitleValue('menu');
+    // TODO: Assemble JavaScript into code variable.
+    var code = dropdown_menu;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.destroyCurrentBricks = {
+    helpUrl: '../../../../blocks_API/generic_event_help.html?event=Destroy_brick',
+    init: function() {
+        this.setColour(230);
+        this.appendDummyInput()
+            .appendTitle("Destroy Brick");
+        this.setOutput(true, 'event');
+        this.setTooltip('Destroy Current Bricks');
+    }
+};
+
+Blockly.JavaScript.destroyCurrentBricks = function() {
+    return ['"destroyCurrentBricks"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.changeXSpeedRelativeToPad = {
+    helpUrl: '../../../../blocks_API/generic_event_help.html?event=Change_x_speed',
+    init: function() {
+        this.setColour(230);
+        this.appendDummyInput()
+            .appendTitle("Change X Speed Relative To Pad");
+        this.setOutput(true, 'event');
+        this.setTooltip('Change X Speed Relative To Pad');
+    }
+};
+
+Blockly.JavaScript.changeXSpeedRelativeToPad = function() {
+    return ['"changeXSpeedRelativeToPad"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.increaseScore = {
+    helpUrl: '../../../../blocks_API/generic_event_help.html?event=Increase_score',
+    init: function() {
+        this.setColour(230);
+        this.appendDummyInput()
+            .appendTitle("Increase score");
+        this.setOutput(true, 'event');
+        this.setTooltip('Increase score event');
+    }
+};
+
+Blockly.JavaScript.increaseScore = function() {
+    return ['"increaseScore"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.decreaseScore = {
+    helpUrl: '../../../../blocks_API/generic_event_help.html?event=Decrease_score',
+    init: function() {
+        this.setColour(230);
+        this.appendDummyInput()
+            .appendTitle("Decrease score");
+        this.setOutput(true, 'event');
+        this.setTooltip('Decrease score event');
+    }
+};
+
+Blockly.JavaScript.decreaseScore = function() {
+    return ['"decreaseScore"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.initScore = {
+    helpUrl: '../../../../blocks_API/generic_event_help.html?event=Init_score',
+    init: function() {
+        this.setColour(230);
+        this.appendDummyInput()
+            .appendTitle("Init score");
+        this.setOutput(true, 'event');
+        this.setTooltip('Init score event');
+    }
+};
+
+Blockly.JavaScript.initScore = function() {
+    return ['"initScore"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.gameStatus = {
+    helpUrl: '../../../../blocks_API/game_status.html',
+    init: function() {
+        this.setColour(230);
+        this.appendDummyInput()
+            .appendTitle("Game ");
+        this.appendDummyInput()
+            .appendTitle(new Blockly.FieldDropdown([
+                ["lost", "'gameLost'"],
+                ["won", "'gameWon'"],
+            ]), "menu");
+        this.setInputsInline(true);
+        this.setOutput(true, 'event');
+        this.setTooltip('');
+    }
+};
+
+Blockly.JavaScript.gameStatus = function() {
+    var dropdown_menu = this.getTitleValue('menu');
+    // TODO: Assemble JavaScript into code variable.
+    var code = dropdown_menu;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+
+custom.showVictoryMessage = {
+    helpUrl: '../../../../blocks_API/generic_event_help.html?event=Show_victory__message',
+    init: function() {
+        this.setColour(230);
+        this.appendDummyInput()
+            .appendTitle("Show victory message");
+        this.setOutput(true, 'event');
+        this.setTooltip('Show victory message event');
+    }
+};
+
+Blockly.JavaScript.showVictoryMessage = function() {
+    return ['"showVictoryMessage"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.key_pressed = {
+    helpUrl: '../../../../blocks_API/clicked_event.html',
+    init: function() {
+        this.setColour(190);
+        this.appendDummyInput()
+            .appendTitle("Clicked");
+        this.appendDummyInput()
+            .appendTitle(new Blockly.FieldDropdown([
+                ["space", "'keydown-32'"],
+                ["key left", "'keydown-37'"],
+                ["key right", "'keydown-39'"]
+            ]), "dropdown");
+        this.setInputsInline(true);
+        this.setOutput(true, 'event');
+        this.setTooltip('');
+    }
+};
+
+Blockly.JavaScript.key_pressed = function() {
+    var dropdown_dropdown = this.getTitleValue('dropdown');
+    // TODO: Assemble JavaScript into code variable.
+    var code = dropdown_dropdown;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.ball_at = {
+    helpUrl: '../../../../blocks_API/generic_event_help.html?event=Ball_at',
+    init: function() {
+        this.setColour(190);
+        this.appendDummyInput()
+            .appendTitle("Ball at");
+        this.appendDummyInput()
+            .appendTitle(new Blockly.FieldDropdown([
+                ["left", "'ballAtLeft'"],
+                ["right", "'ballAtRight'"],
+                ["top", "'ballAtTop'"],
+                ["bottom", "'ballAtBottom'"]
+            ]), "menu");
+        this.setInputsInline(true);
+        this.setOutput(true, 'event');
+        this.setTooltip('');
+    }
+};
+
+Blockly.JavaScript.ball_at = function() {
+    var dropdown_menu = this.getTitleValue('menu');
+    // TODO: Assemble JavaScript into code variable.
+    var code = dropdown_menu;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.ball_collides_with = {
+    helpUrl: '../../../../blocks_API/ball_colliades.html',
+    init: function() {
+        this.setColour(190);
+        this.appendDummyInput()
+            .appendTitle("Ball collides with ");
+        this.appendDummyInput()
+            .appendTitle(new Blockly.FieldDropdown([
+                ["red", "'ballCollidesWithRedBrick'"],
+                ["gold", "'ballCollidesWithGoldBrick'"],
+                ["green", "'ballCollidesWithGreenBrick'"],
+                ["blue", "'ballCollidesWithBlueBrick'"],
+                ["pink", "'ballCollidesWithPinkBrick'"],
+                ["any color", "'ballCollidesWithBrick'"]
+            ]), "menu")
+        this.appendDummyInput()
+            .appendTitle(" brick");
+        this.setInputsInline(true);
+        this.setOutput(true, 'event');
+        this.setTooltip('');
+    }
+};
+
+Blockly.JavaScript.ball_collides_with = function() {
+    var dropdown_menu = this.getTitleValue('menu');
+    // TODO: Assemble JavaScript into code variable.
+    var code = dropdown_menu;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.ballHitPad = {
+    helpUrl: '../../../../blocks_API/generic_event_help.html?event=Ball_hit_pad',
+    init: function() {
+        this.setColour(190);
+        this.appendDummyInput()
+            .appendTitle("Ball Hit Pad");
+        this.setOutput(true, 'event');
+        this.setTooltip('Ball Hit Pad');
+    }
+};
+
+Blockly.JavaScript.ballHitPad = function() {
+    return ['"ballHitPad"', Blockly.JavaScript.ORDER_NONE];
+};
+
+
+custom.ballHitsBrick = {
+    helpUrl: '../../../../blocks_API/ball_hits_a_brick.html',
+    init: function() {
+        this.setColour(190);
+        this.appendDummyInput()
+            .appendTitle("Ball hits a brick");
+        this.appendDummyInput()
+            .appendTitle(new Blockly.FieldDropdown([
+                ["any collision", "'ballCollidesWithBrick'"],
+                ["horizontal collision", "'horizontalCollisionOfBallAndBrick'"],
+                ["vertical collision", "'verticalCollisionOfBallAndBrick'"],
+                ["gold brick", "'ballCollidesWithGoldBrick'"]
+            ]), "menu");
+        this.setInputsInline(true);
+        this.setOutput(true, "event");
+        this.setTooltip('');
+    }
+};
+
+
+Blockly.JavaScript.ballHitsBrick = function() {
+    var dropdown_menu = this.getTitleValue('menu');
+    var code = dropdown_menu;
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.noMoreBricks = {
+    helpUrl: '../../../../blocks_API/generic_event_help.html?event=No_more_bricks',
+    init: function() {
+        this.setColour(190);
+        this.appendDummyInput()
+            .appendTitle("No more bricks");
+        this.setOutput(true, 'event');
+        this.setTooltip('No more bricks event');
+    }
+};
+
+Blockly.JavaScript.noMoreBricks = function() {
+    return ['"noMoreBricks"', Blockly.JavaScript.ORDER_NONE];
+};//--></projectblocks></xml>

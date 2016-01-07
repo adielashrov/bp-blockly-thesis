@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript;version=1.7">
+		function windowLocation() {
+			var tProtocol = window.location.protocol;
+			if((tProtocol == 'http:') || (tProtocol == 'http:')) {
+				return "web";
+			}
+			else if(tProtocol == 'file:') {
+				return "file";
+			}
+		};
+	</script>
+	<script type="text/javascript;version=1.7">
+		if(windowLocation() == "web") {
+			document.write("<link id=\"linkToStyle\" href=\"\/static\/apps\/BP_Code\/apps\/BP\/examples\/Bricks\/styles.css\" rel=\"stylesheet\">");
+		}
+		else {
+			document.write("<link id=\"linkToStyle\" href=\"examples\\Bricks\\styles.css\" rel=\"stylesheet\">");
+		}
+	</script>
+    <title>BrikBrok - my brick breaker HTML 5</title>
+</head>
+<body>
+    <div class="grid">
+        <header>
+            <h1>
+                BP BrikBrok
+			</h1>
+            <ul>
+                <li><a href="#gameZone" id="newGame" style="margin-right:25px">New game</a></li>
+				<li style="display:none;"><a href="#gameZone" id="wormHole" style="display:none;">Wormhole Mode</a></li>
+            </ul>
+        </header>
+        <div id="gameZone">
+            <canvas id="backgroundCanvas">
+                Your browser doesn't support HTML5. 
+            </canvas>
+            <svg id="svgRoot">
+				<circle cx="100" cy="50" r="10" id="ball" />
+                <rect id="pad" height="15px" width="225px" x="200" y="150" rx="10" ry="20"/>
+            </svg>
+            <div id="stats">
+            </div>
+            <div id="message">Victory!</div>
+        </div>
+        <footer>
+            <div style="height: 50px;width=100%">
+				<div style="float:left; width=33%; ">
+					<h2 style="margin-left:15px">Based on a tutorial by David Catuhe</h2>
+				</div>
+				<div id="scoreDiv" style="float:left; width=33%; margin-left:32%;">
+					<h2 id="scoreTextZone" style="font-size: 175%; color:black;">Score:  0 </h2>
+				</div>
+				<div id="debugTextDiv" style="float:right; width=33%; margin-right:5px; ">
+					<h2 id="debugTextZone" style="font-size: 150%; color:grey;">Text will appear here</h2>
+				</div>
+				<!--border-style:solid; border-width: 2px;-->
+				<!--<div style="float:left;">
+					<h2 style="margin-left:15px">Based on a tutorial by David Catuhe</h2>
+				</div>
+				<div id="scoreDiv" style="float:left; margin-left:30%; height:100px; width 100px; border-style:solid; border-width: 2px;">
+					<h2 id="scoreTextZone" style="float:left;font-size: 175%; color:black;">Score: </h2>
+					<h2 id="scoreTextZone2" style="float:left;font-size: 175%; color:black;"> 0 </h2>
+				</div>
+				<div id="debugTextDiv" style="float:left; margin-left:35%; height:100px; ">
+					<h2 id="debugTextZone" style="font-size: 150%; color:grey;text-align:center;">Debug text will appear here</h2>
+				</div>-->
+			</div>
+		</footer>
+    </div>
+	<script type="text/javascript;version=1.7" src="/static/apps/BP_Code/apps/BP/examples/Bricks/mouse.js"></script>
+    <script type="text/javascript;version=1.7" src="/static/apps/BP_Code/apps/BP/examples/Bricks/background.js"></script>
+    <script type="text/javascript;version=1.7" src="/static/apps/BP_Code/apps/BP/examples/Bricks/game.js"></script>
+	<script type="text/javascript;version=1.7" src="examples\Bricks\mouse.js"></script>
+    <script type="text/javascript;version=1.7" src="examples\Bricks\background.js"></script>
+    <script type="text/javascript;version=1.7" src="examples\Bricks\game.js"></script>
+</body>
+</html>

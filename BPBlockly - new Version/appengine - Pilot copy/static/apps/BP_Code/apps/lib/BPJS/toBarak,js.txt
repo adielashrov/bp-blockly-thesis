@@ -1,0 +1,22 @@
+bp.addBThread('sendSMSAdapter', priority++, function() {
+    while(true) {
+		yield({
+			wait:[function (e) {
+				return (e.indexOf("sendSMS") === 0);
+			}]
+        });		
+		
+		/* use the variable bp.lastEvent to send the SMS */
+		var eventParams = bp.lastEvent.split(":");
+		var to = eventParams[1];
+		var msg = eventParams[2];
+		
+	    ...
+    }
+});
+
+activity.on("RecieverSMS",function(from,message){
+
+	bp.event('recievedSMS:' + from + ':' + message);
+
+});

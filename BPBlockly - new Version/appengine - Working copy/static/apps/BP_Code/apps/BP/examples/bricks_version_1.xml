@@ -1,0 +1,329 @@
+<xml xmlns="http://www.w3.org/1999/xhtml"><block type="bp_repeat_forever" x="991" y="-692"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="bp_event" inline="false"><value name="EVENT"><block type="text"><title name="TEXT">ballCollidesWithRedBrick</title></block></value></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="bp_event" inline="false"><value name="EVENT"><block type="text"><title name="TEXT">colorBrickGold</title></block></value></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="598" y="-690"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="key_pressed"><title name="dropdown">'keydown-37'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="acceleratePad"><title name="menu">'acceleratePadLeft'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="acceleratePad"><title name="menu">'acceleratePadLeft'</title></block></value></block></next></block></next></block></statement></block><block type="bp_repeat_forever" x="163" y="-687"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ball_at"><title name="menu">'ballAtLeft'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="reverse_direction"><title name="menu">'reverseBallXDirection'</title></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="168" y="-578"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ball_at"><title name="menu">'ballAtRight'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="reverse_direction"><title name="menu">'reverseBallXDirection'</title></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="599" y="-554"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="key_pressed"><title name="dropdown">'keydown-39'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="acceleratePad"><title name="menu">'acceleratePadRight'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="acceleratePad"><title name="menu">'acceleratePadRight'</title></block></value></block></next></block></next></block></statement></block><block type="bp_repeat_forever" x="991" y="-553"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="bp_event" inline="false"><value name="EVENT"><block type="text"><title name="TEXT">ballCollidesWithGoldBrick</title></block></value></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="bp_event" inline="false"><value name="EVENT"><block type="text"><title name="TEXT">colorBrickGreen</title></block></value></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="168" y="-471"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ball_at"><title name="menu">'ballAtTop'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="reverse_direction"><title name="menu">'reverseBallYDirection'</title></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="993" y="-417"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="bp_event" inline="false"><value name="EVENT"><block type="text"><title name="TEXT">ballCollidesWithGreenBrick</title></block></value></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="destroyCurrentBricks"></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="597" y="-411"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="spaceClicked"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="startGame"></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="172" y="-365"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ball_at"><title name="menu">'ballAtButtom'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="reverse_direction"><title name="menu">'reverseBallYDirection'</title></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="592" y="-304"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ballHitsBrick"><title name="menu">'horizontalCollisionOfBallAndBrick'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="reverse_direction"><title name="menu">'reverseBallYDirection'</title></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="991" y="-300"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="bp_event" inline="false"><value name="EVENT"><block type="text"><title name="TEXT">ballCollidesWithBlueBrick</title></block></value></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="bp_event" inline="false"><value name="EVENT"><block type="text"><title name="TEXT">flagModeNoDestruction</title></block></value></block></value><next><block type="bp_dowhileblocking" inline="false"><value name="events"><block type="destroyCurrentBricks"></block></value><statement name="code"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="bp_event" inline="false"><value name="EVENT"><block type="text"><title name="TEXT">ballCollidesWithBlueBrick</title></block></value></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="bp_event" inline="false"><value name="EVENT"><block type="text"><title name="TEXT">flagModeDestruction</title></block></value></block></value></block></next></block></statement></block></next></block></next></block></statement></block><block type="bp_repeat_forever" x="171" y="-266"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ballHitPad"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="reverse_direction"><title name="menu">'reverseBallYDirection'</title></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="591" y="-185"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ballHitsBrick"><title name="menu">'verticalCollisionOfBallAndBrick'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="reverse_direction"><title name="menu">'reverseBallXDirection'</title></block></value></block></next></block></statement></block><block type="bp_repeat_forever" x="171" y="-164"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ballHitPad"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="changeXSpeedRelativeToPad"></block></value></block></next></block></statement></block><block type="bp_repeat_forever" disabled="true" x="589" y="-63"><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ballHitsBrick"><title name="menu">'ballCollidesWithBrick'</title></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="destroyCurrentBricks"></block></value></block></next></block></statement></block><htmltext>//<!--<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript;version=1.7">
+		function windowLocation() {
+			var tProtocol = window.location.protocol;
+			if((tProtocol == 'http:') || (tProtocol == 'http:')) {
+				return "web";
+			}
+			else if(tProtocol == 'file:') {
+				return "file";
+			}
+		};
+	</script>
+	<script type="text/javascript;version=1.7">
+		if(windowLocation() == "web") {
+			document.write("<link id=\"linkToStyle\" href=\"\/static\/apps\/BP_Code\/apps\/BP\/examples\/Bricks\/styles.css\" rel=\"stylesheet\">");
+		}
+		else {
+			document.write("<link id=\"linkToStyle\" href=\"examples\\Bricks\\styles.css\" rel=\"stylesheet\">");
+		}
+	</script>
+    <title>BrikBrok - my brick breaker HTML 5</title>
+</head>
+<body>
+    <div class="grid">
+        <header>
+            <h1>
+                BrikBrok
+			</h1>
+			<div>
+					<p id="debugP">test text!</p>
+			</div>
+            <ul>
+                <li><a href="#gameZone" id="newGame">New game</a></li>
+            </ul>
+        </header>
+        <div id="gameZone">
+            <canvas id="backgroundCanvas">
+                Your browser doesn't support HTML5. 
+            </canvas>
+            <svg id="svgRoot">
+				<circle cx="100" cy="100" r="10" id="ball" />
+                <rect id="pad" height="15px" width="225px" x="200" y="200" rx="10" ry="20"/>
+            </svg>
+            <div id="stats">
+            </div>
+            <div id="message">Victory!</div>
+        </div>
+        <footer>
+            <ul>
+                <li><a href="http://blogs.msdn.com/eternalcoding">Blog David Catuhe</a></li>
+            </ul>			
+        </footer>
+    </div>
+	<script type="text/javascript;version=1.7" src="/static/apps/BP_Code/apps/BP/examples/Bricks/mouse.js"></script>
+    <script type="text/javascript;version=1.7" src="/static/apps/BP_Code/apps/BP/examples/Bricks/background.js"></script>
+    <script type="text/javascript;version=1.7" src="/static/apps/BP_Code/apps/BP/examples/Bricks/game.js"></script>
+	<script type="text/javascript;version=1.7" src="examples\Bricks\mouse.js"></script>
+    <script type="text/javascript;version=1.7" src="examples\Bricks\background.js"></script>
+    <script type="text/javascript;version=1.7" src="examples\Bricks\game.js"></script>
+</body>
+</html>
+//--></htmltext><projectblocks>//<!--custom = {};
+
+custom.spaceClicked = {
+    helpUrl: 'http://www.example.com/',
+    init: function() {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("Space clicked");
+        this.setOutput(true, 'event');
+        this.setTooltip('Space clicked event');
+    }
+};
+
+Blockly.JavaScript.spaceClicked = function() {
+    return ['"keydown-32"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.startGame = {
+    helpUrl: 'http://www.example.com/',
+    init: function() {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("Start game");
+        this.setOutput(true, 'event');
+        this.setTooltip('Space clicked event');
+    }
+};
+
+Blockly.JavaScript.startGame = function() {
+    return ['"startGame"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.key_pressed = {
+    helpUrl: 'http://www.example.com/',
+    init: function() {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("Key");
+        this.appendDummyInput()
+            .appendTitle(new Blockly.FieldDropdown([
+                ["left", "'keydown-37'"],
+                ["right", "'keydown-39'"]
+            ]), "dropdown");
+        this.setInputsInline(true);
+        this.setOutput(true, 'event');
+        this.setTooltip('');
+    }
+};
+
+Blockly.JavaScript.key_pressed = function() {
+    var dropdown_dropdown = this.getTitleValue('dropdown');
+    // TODO: Assemble JavaScript into code variable.
+    var code = dropdown_dropdown;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.acceleratePad = {
+    helpUrl: 'http://www.example.com/',
+    init: function() {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("Accelerate Pad");
+        this.appendDummyInput()
+            .appendTitle(new Blockly.FieldDropdown([
+                ["left", "'acceleratePadLeft'"],
+                ["right", "'acceleratePadRight'"]
+            ]), "menu");
+        this.setInputsInline(true);
+        this.setOutput(true, 'event');
+        this.setTooltip('');
+    }
+};
+
+Blockly.JavaScript.acceleratePad = function() {
+    var dropdown_menu = this.getTitleValue('menu');
+    // TODO: Assemble JavaScript into code variable.
+    var code = dropdown_menu;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+
+custom.spaceClicked = {
+    helpUrl: 'http://www.example.com/',
+    init: function() {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("Space clicked");
+        this.setOutput(true, 'event');
+        this.setTooltip('Space clicked event');
+    }
+};
+
+Blockly.JavaScript.spaceClicked = function() {
+    return ['"keydown-32"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.startGame = {
+    helpUrl: 'http://www.example.com/',
+    init: function() {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("Start game");
+        this.setOutput(true, 'event');
+        this.setTooltip('Space clicked event');
+    }
+};
+
+Blockly.JavaScript.startGame = function() {
+    return ['"startGame"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.key_pressed = {
+    helpUrl: 'http://www.example.com/',
+    init: function() {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("Key");
+        this.appendDummyInput()
+            .appendTitle(new Blockly.FieldDropdown([
+                ["left", "'keydown-37'"],
+                ["right", "'keydown-39'"]
+            ]), "dropdown");
+        this.setInputsInline(true);
+        this.setOutput(true, 'event');
+        this.setTooltip('');
+    }
+};
+
+Blockly.JavaScript.key_pressed = function() {
+    var dropdown_dropdown = this.getTitleValue('dropdown');
+    // TODO: Assemble JavaScript into code variable.
+    var code = dropdown_dropdown;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.ball_at = {
+    helpUrl: 'http://www.example.com/',
+    init: function() {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("Ball at");
+        this.appendDummyInput()
+            .appendTitle(new Blockly.FieldDropdown([
+                ["left", "'ballAtLeft'"],
+                ["right", "'ballAtRight'"],
+                ["top", "'ballAtTop'"],
+                ["bottom", "'ballAtButtom'"]
+            ]), "menu");
+        this.setInputsInline(true);
+        this.setOutput(true, 'event');
+        this.setTooltip('');
+    }
+};
+
+Blockly.JavaScript.ball_at = function() {
+    var dropdown_menu = this.getTitleValue('menu');
+    // TODO: Assemble JavaScript into code variable.
+    var code = dropdown_menu;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.reverse_direction = {
+    helpUrl: 'http://www.example.com/',
+    init: function() {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("Reverse ball");
+        this.appendDummyInput()
+            .appendTitle(new Blockly.FieldDropdown([
+                ["x", "'reverseBallXDirection'"],
+                ["y", "'reverseBallYDirection'"]
+            ]), "menu");
+        this.appendDummyInput()
+            .appendTitle("direction");
+        this.setInputsInline(true);
+        this.setOutput(true, "event");
+        this.setTooltip('');
+    }
+};
+
+Blockly.JavaScript.reverse_direction = function() {
+    var dropdown_menu = this.getTitleValue('menu');
+    // TODO: Assemble JavaScript into code variable.
+    var code = dropdown_menu;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+
+custom.destroyCurrentBricks = {
+    helpUrl: 'http://www.example.com/',
+    init: function() {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("Destroy Brick");
+        this.setOutput(true, 'event');
+        this.setTooltip('Destroy Current Bricks');
+    }
+};
+
+Blockly.JavaScript.destroyCurrentBricks = function() {
+    return ['"destroyCurrentBricks"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.ballHitPad = {
+    helpUrl: 'http://www.example.com/',
+    init: function() {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("Ball Hit Pad");
+        this.setOutput(true, 'event');
+        this.setTooltip('Ball Hit Pad');
+    }
+};
+
+Blockly.JavaScript.ballHitPad = function() {
+    return ['"ballHitPad"', Blockly.JavaScript.ORDER_NONE];
+};
+
+
+custom.changeXSpeedRelativeToPad = {
+    helpUrl: 'http://www.example.com/',
+    init: function() {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("Change X Speed Relative To Pad");
+        this.setOutput(true, 'event');
+        this.setTooltip('Change X Speed Relative To Pad');
+    }
+};
+
+Blockly.JavaScript.changeXSpeedRelativeToPad = function() {
+    return ['"changeXSpeedRelativeToPad"', Blockly.JavaScript.ORDER_NONE];
+};
+
+
+custom.ballHitsBrick = {
+    helpUrl: 'http://www.example.com/',
+    init: function() {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("Ball hits a brick");
+        this.appendDummyInput()
+            .appendTitle(new Blockly.FieldDropdown([
+                ["any collision", "'ballCollidesWithBrick'"],
+                ["horizontal collision", "'horizontalCollisionOfBallAndBrick'"],
+                ["vertical collision", "'verticalCollisionOfBallAndBrick'"],
+                ["gold brick", "'ballCollidesWithGoldBrick'"]
+            ]), "menu");
+        this.setInputsInline(true);
+        this.setOutput(true, "event");
+        this.setTooltip('');
+    }
+};
+
+
+Blockly.JavaScript.ballHitsBrick = function() {
+    var dropdown_menu = this.getTitleValue('menu');
+    var code = dropdown_menu;
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};//--></projectblocks></xml>

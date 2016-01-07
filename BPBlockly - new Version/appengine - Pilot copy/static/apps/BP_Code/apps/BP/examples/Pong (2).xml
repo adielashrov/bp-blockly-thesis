@@ -1,0 +1,561 @@
+<xml xmlns="http://www.w3.org/1999/xhtml"><block type="controls_whileUntil" inline="false" x="358" y="-205"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="rightUserClickedUpArrow"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="rightMatkaUp"></block></value></block></next></block></statement></block><block type="controls_whileUntil" inline="false" x="-54" y="-188"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="leftUserClickedUpArrow"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="leftMatkaUp"></block></value></block></next></block></statement></block><block type="controls_whileUntil" inline="false" x="-408" y="-182"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="scoped_request" inline="false"><value name="REQUEST"><block type="ballRight"></block></value></block></statement></block><block type="controls_whileUntil" inline="false" x="-400" y="-64"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="scoped_request" inline="false"><value name="REQUEST"><block type="ballDown"></block></value></block></statement></block><block type="controls_whileUntil" inline="false" x="355" y="-61"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="rightUserClickedDownArrow"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="rightMatkaDown"></block></value></block></next></block></statement></block><block type="controls_whileUntil" inline="false" x="-51" y="-59"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="leftUserClickedDownArrow"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="leftMatkaDown"></block></value></block></next></block></statement></block><block type="controls_whileUntil" inline="false" x="-398" y="31"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="scoped_request" inline="false"><value name="REQUEST"><block type="ballUp"></block></value></block></statement></block><block type="controls_whileUntil" inline="false" x="-45" y="97"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="bp_dowhileblocking" inline="false"><value name="events"><block type="lists_create_with" inline="true"><mutation items="2"></mutation><value name="ADD0"><block type="ballLeft"></block></value><value name="ADD1"><block type="ballRight"></block></value></block></value><statement name="code"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="lists_create_with" inline="true"><mutation items="2"></mutation><value name="ADD0"><block type="ballUp"></block></value><value name="ADD1"><block type="ballDown"></block></value></block></value></block></statement><next><block type="bp_dowhileblocking" inline="false"><value name="events"><block type="lists_create_with" inline="true"><mutation items="2"></mutation><value name="ADD0"><block type="ballUp"></block></value><value name="ADD1"><block type="ballDown"></block></value></block></value><statement name="code"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="lists_create_with" inline="true"><mutation items="2"></mutation><value name="ADD0"><block type="ballLeft"></block></value><value name="ADD1"><block type="ballRight"></block></value></block></value></block></statement></block></next></block></statement></block><block type="controls_whileUntil" inline="false" x="566" y="101"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="lists_create_with" inline="false"><mutation items="2"></mutation><value name="ADD0"><block type="hitLMatkaHighQuarter"></block></value><value name="ADD1"><block type="hitRMatkaLowQuarter"></block></value></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="increaseYSpeed"></block></value></block></next></block></statement></block><block type="controls_whileUntil" inline="false" x="-394" y="132"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="scoped_request" inline="false"><value name="REQUEST"><block type="ballLeft"></block></value></block></statement></block><block type="controls_whileUntil" inline="false" x="568" y="276"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="lists_create_with" inline="false"><mutation items="2"></mutation><value name="ADD0"><block type="hitRMatkaMidHighQuarter"></block></value><value name="ADD1"><block type="hitRMatkaMidLowQuarter"></block></value></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="decreaseYSpeed"></block></value></block></next></block></statement></block><block type="controls_whileUntil" inline="false" x="-400" y="314"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="bp_dowhileblocking" inline="false"><value name="events"><block type="ballUp"></block></value><statement name="code"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ballAtBottom"></block></value></block></statement><next><block type="bp_dowhileblocking" inline="false"><value name="events"><block type="ballDown"></block></value><statement name="code"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="ballAtTop"></block></value></block></statement></block></next></block></statement></block><block type="controls_whileUntil" inline="false" x="-50" y="328"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="bp_dowhileblocking" inline="false"><value name="events"><block type="ballRight"></block></value><statement name="code"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="lists_create_with" inline="false"><mutation items="4"></mutation><value name="ADD0"><block type="hitLMatkaHighQuarter"></block></value><value name="ADD1"><block type="hitLMatkaMidHighQuarter"></block></value><value name="ADD2"><block type="hitLMatkaMidLowQuarter"></block></value><value name="ADD3"><block type="hitLMatkaLowQuarter"></block></value></block></value></block></statement><next><block type="bp_dowhileblocking" inline="false"><value name="events"><block type="ballLeft"></block></value><statement name="code"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="lists_create_with" inline="false"><mutation items="4"></mutation><value name="ADD0"><block type="hitRMatkaHighQuarter"></block></value><value name="ADD1"><block type="hitRMatkaMidHighQuarter"></block></value><value name="ADD2"><block type="hitRMatkaMidLowQuarter"></block></value><value name="ADD3"><block type="hitRMatkaLowQuarter"></block></value></block></value></block></statement></block></next></block></statement></block><htmltext>//<!--<script type="text/javascript" src="../lib/scale.raphael.js"></script>
+<script type="text/javascript" src="../lib/raphael-min.js"></script>
+
+<div align="center">
+  <div id='canvas' style="width:400px;height:400px">    
+</div>
+ 
+  
+<script> 
+var kbh = function(e) {
+    if( e.key == "Down" ) bp.event('rightUserClickedDownArrow');
+    if( e.key == "Up" )   bp.event('rightUserClickedUpArrow');
+
+    if( e.key == "a" )   bp.event('leftUserClickedDownArrow');
+    if( e.key == "q" )   bp.event('leftUserClickedUpArrow');
+
+    console.log(e);
+
+}
+
+onkeypress=kbh;
+</script>
+  
+<script type="text/javascript;version=1.7">
+var paper = Raphael('canvas', '400', '400'); 
+
+
+cx=Math.random()*400;
+cy=Math.random()*400;
+
+// Draw the ball
+ball = paper.circle(cx, cy, 5).attr({
+    fill: "r#fff-#333"
+});
+
+
+
+ly=200;
+lw=80;
+
+// Draw the ball
+lMatka = paper.rect(5, ly, 5,lw,3).attr({
+    fill: "yellow"
+});
+
+
+ry=200;
+rw=80;
+
+// Draw the ball
+rMatka = paper.rect(390, ry, 5,rw,3).attr({
+    fill: "green"
+});
+
+
+
+paper.rect( 0,0,400,400);
+
+
+function moveTheBall(cmd) {
+    ball.animate(cmd, 0, function() {
+
+        var ev=[]
+        if( cy < 5 )
+            ev.push('ballAtTop');
+
+        if( cy > 395 )
+            ev.push('ballAtBottom');
+
+        if( cx > 395 )
+            ev.push('ballAtRight');
+
+        if( cx < 5 )
+            ev.push('ballAtLeft');
+
+
+        if( cx >= 385 && cx <= 395 && cy >= ry      && cy <= ry+rw/4  )
+            ev.push('hitRMatkaHighQuarter');
+
+        if( cx >= 385 && cx <= 395 && cy >  ry+rw/4 && cy <= ry+rw/2  )
+            ev.push('hitRMatkaMidHighQuarter');
+
+        if( cx >= 385 && cx <= 395 && cy >  ry+rw/2 && cy <= ry+3*rw/4  )
+            ev.push('hitRMatkaMidLowQuarter');
+
+        if( cx >= 385 && cx <= 395 && cy >= ry+3*rw/4 && cy <= ry+rw  )
+            ev.push('hitRMatkaLowQuarter');
+
+
+
+        if( cx <= 13 && cx >= 8 && cy >= ly && cy <= ly+lw/4  )
+            ev.push('hitLMatkaHighQuarter');
+
+        if( cx <= 13 && cx >= 8 && cy >  ly+lw/4 && cy <= ly+lw/2  )
+            ev.push('hitLMatkaMidHighQuarter');
+
+        if( cx <= 13 && cx >= 8 && cy >  ly+lw/2 && cy <= ly+3*lw/4  )
+            ev.push('hitLMatkaMidLowQuarter');
+
+        if( cx <= 13 && cx >= 8 && cy >= ly+3*lw/4 && cy <= ly+lw )
+            ev.push('hitLMatkaLowQuarter');
+
+        
+        ev.push('tick');
+        
+        bp.events(ev);
+    });
+}
+
+
+
+function moveLeftMatka(cmd) {
+    lMatka.animate(cmd, 5);
+}
+
+function moveRightMatka(cmd) {
+    rMatka.animate(cmd, 5);
+}
+
+
+
+
+yspeed=5;
+xspeed=5;
+
+bp.addBThread('', priority++, function() {
+	while (true) {
+		yield({wait: ['ballUp']});
+                moveTheBall({cy: (cy-=yspeed)});
+
+	}
+})
+
+
+bp.addBThread('', priority++, function() {
+	while (true) {
+		yield({wait: ['ballDown']});
+                moveTheBall({cy: (cy+=yspeed)});
+
+	}
+})
+
+
+bp.addBThread('', priority++, function() {
+	while (true) {
+		yield({wait: ['ballLeft']});
+                moveTheBall({cx: (cx-=xspeed)});
+
+	}
+})
+
+
+bp.addBThread('', priority++, function() {
+	while (true) {
+		yield({wait: ['ballRight']});
+                moveTheBall({cx: (cx+=xspeed)});
+
+	}
+})
+
+
+bp.addBThread('', priority++, function() {
+	while (true) {
+		yield({wait: ['increaseXSpeed']});
+                xspeed++;
+
+	}
+})
+
+bp.addBThread('', priority++, function() {
+	while (true) {
+		yield({wait: ['increaseYSpeed']});
+                yspeed++;
+
+	}
+})
+
+
+bp.addBThread('', priority++, function() {
+	while (true) {
+		yield({wait: ['decreaseXSpeed']});
+                if(xspeed>0) xspeed = xspeed - 1;
+
+	}
+})
+
+bp.addBThread('', priority++, function() {
+	while (true) {
+		yield({wait: ['decreaseYSpeed']});
+                if(yspeed>0) yspeed = yspeed - 1;
+
+	}
+})
+
+
+
+
+
+
+bp.addBThread('', priority++, function() {
+	while (true) {
+		yield({wait: ['rightMatkaUp']});
+                moveRightMatka({y: (ry-=6)});
+
+	}
+})
+
+bp.addBThread('', priority++, function() {
+	while (true) {
+		yield({wait: ['rightMatkaDown']});
+                moveRightMatka({y: (ry+=6)});
+
+	}
+})
+
+
+bp.addBThread('', priority++, function() {
+	while (true) {
+		yield({wait: ['leftMatkaUp']});
+                moveLeftMatka({y: (ly-=6)});
+
+	}
+})
+
+bp.addBThread('', priority++, function() {
+	while (true) {
+		yield({wait: ['leftMatkaDown']});
+                moveLeftMatka({y: (ly+=6)});
+
+	}
+})
+
+
+
+
+bp.addBThread('', priority++, function() {
+	while (true) {
+	  yield({wait: ['ballUp','ballDown', 'ballRight','ballLeft','ballSmallRandomMove']});
+  	  yield({request: [], wait: ['tick'], block: ['ballUp','ballDown', 'ballRight','ballLeft','ballSmallRandomMove'] });
+	}
+});
+
+
+
+  
+setTimeout("bp.event('start')",10);  
+  
+</script>//--></htmltext><projectblocks>//<!--custom = {};
+
+custom.hitLMatkaMidHighQuarter = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("hitLMatkaMidHighQuarter");
+        this.setOutput(true, 'event');
+        this.setTooltip('hitLMatkaMidHighQuarter');
+    }
+};
+Blockly.JavaScript.hitLMatkaMidHighQuarter = function () {
+    return ['"hitLMatkaMidHighQuarter"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.hitLMatkaMidLowQuarter = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("hitLMatkaMidLowQuarter");
+        this.setOutput(true, 'event');
+        this.setTooltip('hitLMatkaMidLowQuarter');
+    }
+};
+Blockly.JavaScript.hitLMatkaMidLowQuarter = function () {
+    return ['"hitLMatkaMidLowQuarter"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.hitLMatkaLowQuarter = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("hitLMatkaLowQuarter");
+        this.setOutput(true, 'event');
+        this.setTooltip('hitLMatkaLowQuarter');
+    }
+};
+Blockly.JavaScript.hitLMatkaLowQuarter = function () {
+    return ['"hitLMatkaLowQuarter"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.hitRMatkaHighQuarter = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("hitRMatkaHighQuarter");
+        this.setOutput(true, 'event');
+        this.setTooltip('hitRMatkaHighQuarter');
+    }
+};
+Blockly.JavaScript.hitRMatkaHighQuarter = function () {
+    return ['"hitRMatkaHighQuarter"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.ballAtBottom = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("ballAtBottom");
+        this.setOutput(true, 'event');
+        this.setTooltip('ballAtBottom');
+    }
+};
+Blockly.JavaScript.ballAtBottom = function () {
+    return ['"ballAtBottom"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.ballAtTop = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("ballAtTop");
+        this.setOutput(true, 'event');
+        this.setTooltip('ballAtTop');
+    }
+};
+Blockly.JavaScript.ballAtTop = function () {
+    return ['"ballAtTop"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.ballUp = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("ballUp");
+        this.setOutput(true, 'event');
+        this.setTooltip('ballUp');
+    }
+};
+Blockly.JavaScript.ballUp = function () {
+    return ['"ballUp"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.ballDown = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("ballDown");
+        this.setOutput(true, 'event');
+        this.setTooltip('ballDown');
+    }
+};
+Blockly.JavaScript.ballDown = function () {
+    return ['"ballDown"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.ballLeft = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("ballLeft");
+        this.setOutput(true, 'event');
+        this.setTooltip('ballLeft');
+    }
+};
+Blockly.JavaScript.ballLeft = function () {
+    return ['"ballLeft"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.ballRight = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("ballRight");
+        this.setOutput(true, 'event');
+        this.setTooltip('ballRight');
+    }
+};
+Blockly.JavaScript.ballRight = function () {
+    return ['"ballRight"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.leftUserClickedUpArrow = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("leftUserClickedUpArrow");
+        this.setOutput(true, 'event');
+        this.setTooltip('leftUserClickedUpArrow');
+    }
+};
+Blockly.JavaScript.leftUserClickedUpArrow = function () {
+    return ['"leftUserClickedUpArrow"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.leftMatkaUp = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("leftMatkaUp");
+        this.setOutput(true, 'event');
+        this.setTooltip('leftMatkaUp');
+    }
+};
+Blockly.JavaScript.leftMatkaUp = function () {
+    return ['"leftMatkaUp"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.hitLMatkaHighQuarter = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("hitLMatkaHighQuarter");
+        this.setOutput(true, 'event');
+        this.setTooltip('hitLMatkaHighQuarter');
+    }
+};
+Blockly.JavaScript.hitLMatkaHighQuarter = function () {
+    return ['"hitLMatkaHighQuarter"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.hitRMatkaLowQuarter = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("hitRMatkaLowQuarter");
+        this.setOutput(true, 'event');
+        this.setTooltip('hitRMatkaLowQuarter');
+    }
+};
+Blockly.JavaScript.hitRMatkaLowQuarter = function () {
+    return ['"hitRMatkaLowQuarter"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.increaseYSpeed = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("increaseYSpeed");
+        this.setOutput(true, 'event');
+        this.setTooltip('increaseYSpeed');
+    }
+};
+Blockly.JavaScript.increaseYSpeed = function () {
+    return ['"increaseYSpeed"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.rightUserClickedUpArrow = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("rightUserClickedUpArrow");
+        this.setOutput(true, 'event');
+        this.setTooltip('rightUserClickedUpArrow');
+    }
+};
+Blockly.JavaScript.rightUserClickedUpArrow = function () {
+    return ['"rightUserClickedUpArrow"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.rightMatkaUp = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("rightMatkaUp");
+        this.setOutput(true, 'event');
+        this.setTooltip('rightMatkaUp');
+    }
+};
+Blockly.JavaScript.rightMatkaUp = function () {
+    return ['"rightMatkaUp"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.leftUserClickedDownArrow = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("leftUserClickedDownArrow");
+        this.setOutput(true, 'event');
+        this.setTooltip('leftUserClickedDownArrow');
+    }
+};
+Blockly.JavaScript.leftUserClickedDownArrow = function () {
+    return ['"leftUserClickedDownArrow"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.leftMatkaDown = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("leftMatkaDown");
+        this.setOutput(true, 'event');
+        this.setTooltip('leftMatkaDown');
+    }
+};
+Blockly.JavaScript.leftMatkaDown = function () {
+    return ['"leftMatkaDown"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.hitRMatkaMidHighQuarter = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("hitRMatkaMidHighQuarter");
+        this.setOutput(true, 'event');
+        this.setTooltip('hitRMatkaMidHighQuarter');
+    }
+};
+Blockly.JavaScript.hitRMatkaMidHighQuarter = function () {
+    return ['"hitRMatkaMidHighQuarter"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.hitRMatkaMidLowQuarter = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("hitRMatkaMidLowQuarter");
+        this.setOutput(true, 'event');
+        this.setTooltip('hitRMatkaMidLowQuarter');
+    }
+};
+Blockly.JavaScript.hitRMatkaMidLowQuarter = function () {
+    return ['"hitRMatkaMidLowQuarter"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.decreaseYSpeed = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("decreaseYSpeed");
+        this.setOutput(true, 'event');
+        this.setTooltip('decreaseYSpeed');
+    }
+};
+Blockly.JavaScript.decreaseYSpeed = function () {
+    return ['"decreaseYSpeed"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.rightUserClickedDownArrow = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("rightUserClickedDownArrow");
+        this.setOutput(true, 'event');
+        this.setTooltip('rightUserClickedDownArrow');
+    }
+};
+Blockly.JavaScript.rightUserClickedDownArrow = function () {
+    return ['"rightUserClickedDownArrow"', Blockly.JavaScript.ORDER_NONE];
+};
+custom.rightMatkaDown = {
+    helpUrl: 'http://www.example.com/',
+    init: function () {
+        this.setColour(290);
+        this.appendDummyInput()
+            .appendTitle("rightMatkaDown");
+        this.setOutput(true, 'event');
+        this.setTooltip('rightMatkaDown');
+    }
+};
+Blockly.JavaScript.rightMatkaDown = function () {
+    return ['"rightMatkaDown"', Blockly.JavaScript.ORDER_NONE];
+};//--></projectblocks></xml>

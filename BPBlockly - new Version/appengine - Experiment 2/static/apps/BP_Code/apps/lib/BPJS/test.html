@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Test bp.js</title>
+    <script type="text/javascript;version=1.7" src="bp.js"></script>
+    <script type="text/javascript;version=1.7" src="bpunit.js"></script>
+    <script type="text/javascript;version=1.7" src="bpjs_suite.js"></script>
+</head>
+<body>
+    <h1>Test bp.js</h1>
+    <script type="text/javascript;version=1.7">
+        var bpjs_tests = new BSuite(bpjs_suite);
+        bpjs_tests.run();
+        bpjs_tests.report(
+            function(name, ok, exp, act) {
+                var str = ok ? "passed" : "failed";
+                if (ok)
+                    document.writeln(name + " passed <br>");
+                else
+                    document.writeln(name + " failed, expected " + exp + " actual " + act + "<br>");
+            },
+            function(total, passed, failed) {
+                document.writeln("total " + total + " passed " + passed + " failed " + failed + "<br>");
+            }
+        );
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Hot/Cold</title>
+    <script type="text/javascript" src="lib/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript;version=1.7" src="bp.js"></script>
+    <script type="text/javascript;version=1.7">
+        bp = new BProgram();
+
+        function on_hot() {
+            while (true) {
+                yield({wait: ['hot']});
+                document.getElementById('faucet').value += 'Add hot\n';
+            }
+        }
+        function on_cold() {
+            while (true) {
+                yield({wait: ['cold']});
+                document.getElementById('faucet').value += 'Add cold\n';
+            }
+        }
+        function interleave() {
+            while (true) {
+                yield({wait: ['hot'], block: ['cold']});
+                yield({wait: ['cold'], block: ['hot']});
+            }
+        }
+
+        bp.addBThread('on_hot',  2, on_hot);
+        bp.addBThread('on_cold', 3, on_cold);
+        bp.addBThread('interleave', 4, interleave);
+    </script>
+</head>
+<body>
+    <h1>Hot/Cold</h1>
+    <button id="hot"  onclick="bp.event('hot');">Add hot</button>
+    <button id="cold" onclick="bp.event('cold');">Add cold</button>
+    <br>
+    <label>
+        Faucet status:<br>
+        <textarea id="faucet" rows="12" cols="10"></textarea>
+    </label>
+
+</body>
+</html>

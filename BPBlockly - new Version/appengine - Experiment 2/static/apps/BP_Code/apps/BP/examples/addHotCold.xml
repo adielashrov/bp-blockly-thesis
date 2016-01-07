@@ -1,0 +1,37 @@
+<xml xmlns="http://www.w3.org/1999/xhtml"><block type="controls_repeat" x="32" y="-412"><title name="TIMES">5</title><statement name="DO"><block type="scoped_request" inline="false"><value name="REQUEST"><block type="bp_event_addCold"></block></value></block></statement></block><block type="controls_repeat" x="-244" y="-409"><title name="TIMES">5</title><statement name="DO"><block type="scoped_request" inline="false"><value name="REQUEST"><block type="bp_event_addHot"></block></value></block></statement></block><block type="bp_repeat_forever" x="-63" y="-261"><statement name="DO"><block type="bp_dowhileblocking" inline="false"><value name="events"><block type="bp_event_addHot"></block></value><statement name="code"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="bp_event_addCold"></block></value></block></statement><next><block type="bp_dowhileblocking" inline="false"><value name="events"><block type="bp_event_addCold"></block></value><statement name="code"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="bp_event_addHot"></block></value></block></statement></block></next></block></statement></block><htmltext>//<!--<bt>
+<br>
+
+<center style="font-size: x-large"
+  	when_addHot  = 'innerHTML += "<span style=\"color:black\">addHot</span><br>"'
+	when_addCold = 'innerHTML += "<span style=\"padding-left:100px\">addCold</span><br>"'
+> //--></htmltext><projectblocks>//<!--custom = {};
+
+custom.bp_event_addHot = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("addHot");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.bp_event_addHot = function () {
+    return ['"addHot"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.bp_event_addCold = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("addCold");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.bp_event_addCold = function () {
+    return ['"addCold"', Blockly.JavaScript.ORDER_NONE];
+};//--></projectblocks></xml>

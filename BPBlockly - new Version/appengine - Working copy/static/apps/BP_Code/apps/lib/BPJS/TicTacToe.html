@@ -1,0 +1,375 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>TicTacToe</title>
+     <style type="text/css">
+		[type=button] {width:80px; height:80px; font:bold 50px BRITANNIC;}
+	</style>
+	<script type="text/javascript" src="lib/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript;version=1.7" src="bp.js"></script>
+    <script type="text/javascript;version=1.7">
+        
+		bp = new BProgram();
+		priority = 0;
+		
+		<!-- ******** Beggining of fixed code ************************ -->
+		function mapper() {
+		while (true) {
+				yield({wait: [function(x) {return true;}] });
+				var x = $.find('[when_'+bp.lastEvent+']');
+				for( var i=0; i<x.length; i++ ) {
+					var command = x[i].getAttribute('when_'+bp.lastEvent);
+					with(x[i]) {eval(command)};
+				}    
+			}
+		}
+		bp.addBThread('mapper', priority++, mapper);
+	
+		function logger() {
+			while(true){
+				yield({wait: [function(x){return true;}]});
+				console.log(bp.lastEvent);
+			}
+		}
+		bp.addBThread('logger', priority++, logger);
+		setTimeout('bp.event("start")',10);
+		<!-- ******** End of fixed code ************************ -->	
+		
+		var allSquares;
+		var p;
+		var allPerm;
+		var x;
+		var cornerSquares;
+		var edgeSquares;
+		var XMoves;
+		var OMoves;
+		var allMoves;
+		var permOfRow1;
+		var permOfRow2;
+		var premOfRow3;
+		var permOfCol1;
+		var permOfCol2;
+		var permOfCol3;
+		var permOfMainDiagonal;
+		var permOfSecondDiagonal;
+
+		
+		
+		allSquares = [11, 12, 13, 21, 22, 23, 31, 32, 33];
+		cornerSquares = [11, 13, 31, 33];
+		edgeSquares = [12, 21, 23, 32];
+		XMoves = ['markX-11', 'markX-12', 'markX-13', 'markX-21', 'markX-22', 'markX-23', 'markX-31', 'markX-32', 'markX-33'];
+		OMoves = ['markO-11', 'markO-12', 'markO-13', 'markO-21', 'markO-22', 'markO-23', 'markO-31', 'markO-32', 'markO-33'];
+		allMoves = [].concat(OMoves, XMoves);
+		permOfRow1 = [
+			[11, 12, 13],
+			[11, 13, 12],
+			[12, 11, 13],
+			[12, 13, 11],
+			[13, 11, 12],
+			[13, 12, 11]
+		];
+		permOfRow2 = [
+			[21, 22, 23],
+			[21, 23, 22],
+			[22, 21, 23],
+			[22, 23, 21],
+			[23, 21, 22],
+			[23, 22, 21]
+		];
+		premOfRow3 = [
+			[31, 32, 33],
+			[31, 33, 32],
+			[32, 31, 33],
+			[32, 33, 31],
+			[33, 31, 32],
+			[33, 32, 31]
+		];
+		permOfCol1 = [
+			[11, 21, 31],
+			[11, 31, 21],
+			[21, 11, 31],
+			[21, 31, 11],
+			[31, 11, 21],
+			[31, 21, 11]
+		];
+		permOfCol2 = [
+			[12, 22, 32],
+			[12, 32, 22],
+			[22, 12, 32],
+			[22, 32, 12],
+			[32, 12, 22],
+			[32, 22, 12]
+		];
+		permOfCol3 = [
+			[13, 23, 33],
+			[13, 33, 23],
+			[23, 13, 33],
+			[23, 33, 13],
+			[33, 13, 23],
+			[33, 23, 13]
+		];
+		permOfMainDiagonal = [
+			[11, 22, 33],
+			[11, 33, 22],
+			[22, 11, 33],
+			[22, 33, 11],
+			[33, 11, 22],
+			[33, 22, 11]
+		];
+		permOfSecondDiagonal = [
+			[13, 22, 31],
+			[13, 31, 22],
+			[22, 13, 31],
+			[22, 31, 13],
+			[31, 13, 22],
+			[31, 22, 13]
+		];
+		allPerm = [].concat(permOfCol1, permOfCol2, permOfCol3, permOfRow1, permOfRow2, premOfRow3, permOfMainDiagonal, permOfSecondDiagonal);
+
+		allSquares.forEach(function(p, p_idx) {
+			bp.addBThread('mark X when clicked' + p_idx, priority++, function() {
+				yield({
+					request: [],
+					wait: [String('click-') + String(p)],
+					block: []
+				});
+				yield({
+					request: [String('markX-') + String(p)],
+					wait: [],
+					block: []
+				});
+			})
+		});
+		bp.addBThread('X plays first, then O, etc.', priority++, function() {
+			while (true) {
+				yield({
+					request: [],
+					wait: XMoves,
+					block: OMoves
+				});
+				yield({
+					request: [],
+					wait: OMoves,
+					block: XMoves
+				});
+			}
+		});
+		allSquares.forEach(function(p, p_idx) {
+			bp.addBThread('A square cannot be marked twice' + p_idx, priority++, function() {
+				yield({
+					request: [],
+					wait: [String('markX-') + String(p), ''],
+					block: []
+				});
+				yield({
+					request: [],
+					wait: [],
+					block: [String('markX-') + String(p), String('markO-') + String(p)]
+				});
+			})
+		});
+		p;
+
+		'markO-';
+
+		allPerm.forEach(function(p, p_idx) {
+			bp.addBThread('X wins when thare are 3 Xs in a line' + p_idx, priority++, function() {
+				yield({
+					request: [],
+					wait: [String('markX-') + String(p[0])],
+					block: []
+				});
+				yield({
+					request: [],
+					wait: [String('markX-') + String(p[1])],
+					block: []
+				});
+				yield({
+					request: [],
+					wait: [String('markX-') + String(p[2])],
+					block: []
+				});
+				yield({
+					request: ['Xwin'],
+					wait: [],
+					block: []
+				});
+			})
+		});
+		allPerm.forEach(function(p, p_idx) {
+			bp.addBThread('O wins when thare are 3 Os in a line' + p_idx, priority++, function() {
+				yield({
+					request: [],
+					wait: [String('markO-') + String(p[0])],
+					block: []
+				});
+				yield({
+					request: [],
+					wait: [String('markO-') + String(p[1])],
+					block: []
+				});
+				yield({
+					request: [],
+					wait: [String('markO-') + String(p[2])],
+					block: []
+				});
+				yield({
+					request: ['Owin'],
+					wait: [],
+					block: []
+				});
+			})
+		});
+		bp.addBThread('Declare a tie when after a sequence of nine move events and no win', priority++, function() {
+			for (x = 1; x <= 9; x++) {
+				yield({
+					request: [],
+					wait: allMoves,
+					block: []
+				});
+			}
+			yield({
+				request: ['tie'],
+				wait: [],
+				block: []
+			});
+		});
+		allPerm.forEach(function(p, p_idx) {
+			bp.addBThread('Add a third O to a sequence of two Os in a line' + p_idx, priority++, function() {
+				yield({
+					request: [],
+					wait: [String('markO-') + String(p[0])],
+					block: []
+				});
+				yield({
+					request: [],
+					wait: [String('markO-') + String(p[1])],
+					block: []
+				});
+				yield({
+					request: [String('markO-') + String(p[2])],
+					wait: [],
+					block: []
+				});
+			})
+		});
+		allPerm.forEach(function(p, p_idx) {
+			bp.addBThread('Mark an O in the remaining square of any line with two Xs' + p_idx, priority++, function() {
+				yield({
+					request: [],
+					wait: [String('markX-') + String(p[0])],
+					block: []
+				});
+				yield({
+					request: [],
+					wait: [String('markX-') + String(p[1])],
+					block: []
+				});
+				yield({
+					request: [String('markO-') + String(p[2])],
+					wait: [],
+					block: []
+				});
+			})
+		});
+		bp.addBThread('Mark O in the center if higher priority strategies are not applicable', priority++, function() {
+			yield({
+				request: ['markO-22'],
+				wait: [],
+				block: []
+			});
+		});
+		cornerSquares.forEach(function(p, p_idx) {
+			bp.addBThread('Mark O in a corner if higher priority strategies are not applicable' + p_idx, priority++, function() {
+				yield({
+					request: [String('markO-') + String(p)],
+					wait: [],
+					block: []
+				});
+			})
+		});
+		edgeSquares.forEach(function(p, p_idx) {
+			bp.addBThread('Mark O in an edge if higher priority strategies are not applicable' + p_idx, priority++, function() {
+				yield({
+					request: [String('markO-') + String(p)],
+					wait: [],
+					block: []
+				});
+			})
+		});
+				
+    </script>
+</head>
+<body>
+<br/>
+	<table align="center" border="2" cellpadding="2" cellspacing="2" >
+		<tbody>
+		<tr>
+			<td>
+				<input type="button" onclick="bp.event('click-11');"  
+				  when_markO-11 = "value='O'; style.color='red';"
+				  when_markX-11 = "value='X'; style.color='blue';"
+				/>
+			</td>
+			<td>
+				<input type="button" onclick="bp.event('click-12');" 
+				  when_markO-12 = "value='O'; style.color='red';"
+				  when_markX-12 = "value='X'; style.color='blue';"
+				/>
+			</td>
+			<td>
+				<input type="button" onclick="bp.event('click-13');" 
+				  when_markO-13 = "value='O'; style.color='red';"
+				  when_markX-13 = "value='X'; style.color='blue';"
+				/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" onclick="bp.event('click-21');" 
+				  when_markO-21 = "value='O'; style.color='red';"
+				  when_markX-21 = "value='X'; style.color='blue';"				  
+				/>
+			</td>
+			<td>
+				<input type="button" onclick="bp.event('click-22');" 
+				  when_markO-22 = "value='O'; style.color='red';"
+				  when_markX-22 = "value='X'; style.color='blue';"
+				/>
+			</td>
+			<td>
+				<input type="button" onclick="bp.event('click-23');"
+				  when_markO-23 = "value='O'; style.color='red';"
+				  when_markX-23 = "value='X'; style.color='blue';"
+				/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" onclick="bp.event('click-31');" 
+				  when_markO-31 = "value='O'; style.color='red';"
+				  when_markX-31 = "value='X'; style.color='blue';"
+				/>
+			</td>
+			<td>
+				<input type="button" onclick="bp.event('click-32');" 
+				  when_markO-32 = "value='O'; style.color='red';"
+				  when_markX-32 = "value='X'; style.color='blue';"
+				/>
+			</td>
+			<td>
+				<input type="button" onclick="bp.event('click-33');" 
+				  when_markO-33 = "value='O'; style.color='red';"
+				  when_markX-33 = "value='X'; style.color='blue';"
+				/>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<hidden when_Xwin="alert('X player wins !'); restart();" />
+<hidden when_Owin="alert('O player wins !'); restart();" />
+<hidden when_tie="alert('Its a tie'); restart();" />
+</body>
+</html>

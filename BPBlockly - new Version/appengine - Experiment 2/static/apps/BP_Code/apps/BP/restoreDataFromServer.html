@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  	<script type="text/javascript">
+   		google.load("jquery", "1.7.0");
+   		google.load("jqueryui", "1.7.0");
+  	</script>
+</head>
+<body>
+	<div>
+		<h1>Data Restore</h1>
+	</div>
+	<div>
+		<p><font size="4">Write the item key to restore from the server storage</font></p>
+		Storage key: <input type="text" name="storageKey" id="storageKeyText">
+		<br>
+		<br>
+	</div>
+	<!--
+		<div id="dataTextArea" style="border: 1px solid; width: 100%; height: 400px; overflow: scroll;"> 
+			You value will appear here in the div.
+		</div>
+	-->
+	<textarea id="dataTextArea" style="border: 1px solid; width: 100%; height: 600px; overflow: scroll;">
+		You value will appear here in the div.
+	</textarea>
+	<div style="padding: 10px;">
+		<button id="storageButton" type="button" >Retrieve data!</button>
+		<script type="text/javascript">
+			var button = document.getElementById('storageButton');
+			button.addEventListener("click", function(){
+				
+				var keyAsText = document.getElementById("storageKeyText").value;
+    			var dataAsArray = {key:keyAsText}; //Array 
+    			window.jQuery.ajax({
+        			url : "/storage",
+        			type: "POST",
+        			data : dataAsArray,
+        			success: function(data, textStatus, jqXHR)
+        			{
+            			//data - response from server
+            			console.log(jqXHR);
+            			var dataDecoded = decodeURI(data);
+            			//alert( "data: " + dataDecoded);
+            			document.getElementById("dataTextArea").innerHTML = dataDecoded;
+        			},
+        			error: function (jqXHR, textStatus, errorThrown)
+					{
+             			//data - error from server
+            			var responseText = jQuery.parseJSON(jqXHR.responseText);
+            			console.log(responseText);
+
+        			}
+    			});
+			});
+		</script>
+	</div>
+</body>
+</html>

@@ -1,0 +1,515 @@
+<xml xmlns="http://www.w3.org/1999/xhtml"><block type="scoped_request" inline="false" x="-280" y="-990"><value name="REQUEST"><block type="userWantSwitchAndShift"></block></value></block><block type="controls_whileUntil" inline="false" x="-260" y="-932"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="userWantShift"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="responseStarts"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="startanimation_shift"></block></value><next><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="animationEnded_Shift"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="startAnimation_SetArrow"></block></value><next><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="animationEnded_SetArrow"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="responseEnds"></block></value></block></next></block></next></block></next></block></next></block></next></block></next></block></statement></block><block type="controls_whileUntil" inline="false" x="-259" y="-690"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="userWantSwitchAndShift"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="responseStarts"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="startAnimation_MoveArrow"></block></value><next><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="animationEnded_MoveArrow"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="startAnimation_SwitchCurrentButton"></block></value><next><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="animationEnded_SwitchCurrentButton"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="startanimation_shift"></block></value><next><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="animationEnded_Shift"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="startAnimation_SetArrow"></block></value><next><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="animationEnded_SetArrow"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="responseEnds"></block></value></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></statement></block><block type="controls_whileUntil" inline="false" x="-256" y="-268"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="responseStarts"></block></value><next><block type="bp_dowhileblocking" inline="false"><value name="events"><block type="responseStarts"></block></value><statement name="code"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="responseEnds"></block></value></block></statement></block></next></block></statement></block><block type="controls_whileUntil" inline="false" disabled="true" x="445" y="-163"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="AdversaryMovesNext"></block></value><next><block type="bp_breakupon" inline="false"><statement name="code"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="stateIsNotLeading"></block></value><next><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="responseEnds"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="userWantShift"></block></value></block></next></block></next></block></statement><value name="events"><block type="stateIsLeading"></block></value></block></next></block></statement></block><block type="controls_whileUntil" inline="false" x="-249" y="-91"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="AdversaryMovesNext"></block></value><next><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="lists_create_with" inline="true"><mutation items="2"></mutation><value name="ADD0"><block type="text"><title name="TEXT">stateIsLeading</title></block></value><value name="ADD1"><block type="text"><title name="TEXT">stateIsNotLeading</title></block></value></block></value><next><block type="controls_if" inline="false"><mutation else="1"></mutation><value name="IF0"><block type="logic_compare" inline="true"><title name="OP">EQ</title><value name="A"><block type="bp_lastEvent"></block></value><value name="B"><block type="text"><title name="TEXT">stateIsLeading</title></block></value></block></value><statement name="DO0"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="responseEnds"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="userWantSwitchAndShift"></block></value></block></next></block></statement><statement name="ELSE"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="responseEnds"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="userWantShift"></block></value></block></next></block></statement></block></next></block></next></block></statement></block><block type="controls_whileUntil" inline="false" disabled="true" x="449" y="27"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="AdversaryMovesNext"></block></value><next><block type="bp_breakupon" inline="false"><statement name="code"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="stateIsLeading"></block></value><next><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="responseEnds"></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="userWantSwitchAndShift"></block></value></block></next></block></next></block></statement><value name="events"><block type="stateIsNotLeading"></block></value></block></next></block></statement></block><htmltext>//<!--<script type="text/javascript" src="../lib/scale.raphael.js"></script>
+<script type="text/javascript" src="../lib/raphael-min.js"></script>
+
+<div align="center">
+  <div id='canvas' style="width:400px;height:350px">    
+</div>
+  
+  <center style="color:gray">
+  When the green arrow moves to the right, you have a choice how to move. <br>
+  
+  You can decide to just rotate to the next button (by pressing the SPACE bar) <br>
+  
+  or to also switch the current button before rotating (by pressing any other key). <br>
+  
+  Your oponent (the computer) have the same choice when the arrow is red. <br> <br> 
+  
+  <span style="font-size: x-large; color: red;"> Your goal is to make all the buttons red.  </span>
+  
+</center>
+  
+  
+<dummy
+	when_startAnimation-Shift               = "shift()"
+    when_startAnimation-SwitchCurrentButton = "switchCurrentButton()"
+    when_startAnimation-moveArrow           = "moveArrow()"
+    when_startAnimation-SetArrow            = "setArrow()"
+/>  
+  
+  
+<script> 
+var kbh = function(e) {
+  
+/*
+  switch(e.charCode-49){
+	case 0:
+  		bp.event('startAnimation-Shift');
+  		return;
+	case 1:
+  		bp.event('startAnimation-SwitchCurrentButton');
+  		return;
+	case 2:
+  		bp.event('startAnimation-moveArrow');
+  		return;
+	case 3:
+  		bp.event('startAnimation-SetArrow');
+  		return;
+
+	}  
+*/  
+
+  
+    if( e.charCode == 32 )
+      bp.event('userWantShift');
+	else
+      bp.event('userWantSwitchAndShift');
+
+}
+
+onkeypress=kbh;
+</script>
+  
+<script>
+var paper = ScaleRaphael('canvas', '350', '300'); 
+
+paper.scaleAll(1.3);
+
+
+// A class represnting a single Button  
+function Button(cx, cy) {
+    this.b1 = paper.rect(cx - 40, cy - 25, 40, 50, 8).attr({
+        fill: '#98180e',
+        stroke: '#3f0a05',
+        'stroke-width': 2
+    });
+
+    this.b2 = paper.rect(cx, cy - 25, 20, 50, 8).attr({
+        fill: '#248b0b',
+        stroke: '#0c3003',
+        'stroke-width': 2
+    });
+
+    this.m = paper.rect(cx - 20, cy - 30, 40, 60, 8).attr({
+        gradient: '90-#fff-#000',
+        stroke: '#3b4449',
+        'stroke-width': 4,
+        'stroke-linejoin': 'round'
+    });
+
+    this.set = paper.set();
+    this.set.push(this.b1, this.b2);
+
+    this.state = true;
+
+    this.switchState = function (cb) {
+        this.set.animate({
+            transform: "t" + (this.state ? 20 : -20) + ",0..."
+        }, 200, cb);
+
+        this.state = !this.state; 
+    };
+
+    this.all = paper.set();
+    this.all.push(this.b1, this.b2, this.m);
+
+    this.all.transform("S.5,.5," + cx + "," + cy);
+}
+
+
+var n = 8,
+    cnx = 150, 
+    cny = 150,  
+    btns = paper.set(),
+    buttons = new Array(n);
+
+// Draw the outer circle  
+paper.circle(cnx, cny, 100).attr({  
+    fill: "r#777-#ccc-#777",
+    stroke: '#3b4449',
+    'stroke-width': 5
+});
+
+
+// Draw the inner circle  
+var cc = paper.circle(cnx, cny, 20).attr({
+    fill: "r#fff-#333"
+});
+
+
+// Draw the buttons  
+for (var i = 0; i < n; i++) {
+    var b = new Button(cnx + 100, cny);
+    b.all.transform("...R" + i * (360 / n) + " " + cnx + " " + cny);
+
+    btns.push(b.all);
+    buttons[i] = b;
+}
+
+
+// Draw the arrow
+var str = 'M0,10L30,10L30,0L50,20L30,40L30,30L0,30Z';
+
+var finger = paper.path(str).attr({
+    fill: "#000",
+    stroke: "none"
+}).transform("T" + (cnx - 35) + "," + (cny - 20) + "s0.6t118,0").attr("fill", '#98180e');
+
+
+
+/** 
+ * Shift the buttons one postion clockwise
+ */
+function shift() {
+    i++;
+
+    btns.animate({
+        transform: "...R" + (-360 / n) + " " + cnx + " " + cny
+    }, 300, function () {
+        bp.event('animationEnded-Shift');
+        bp.event(buttons[i % buttons.length].state ? "AdversaryMovesNext" : "NullifierMovesNext");
+        reportState();
+
+    });
+}
+
+
+
+/** 
+ * Switch the button that the arrow is pointing at  
+ */
+function switchCurrentButton() {
+    var curButt = buttons[i % buttons.length];
+
+    curButt.switchState(
+
+    function () {
+        bp.event('animationEnded-SwitchCurrentButton');
+    });
+}
+
+
+
+/**
+ * Move the arrow to where it can click tghe button 
+ * nd set its color acordingly 
+ */
+function setArrow() {
+    var curButt = buttons[i % buttons.length];
+
+    var whendone = function () {
+            bp.event('animationEnded-SetArrow');
+        };
+
+    var leftFingTransform = "T" + (cnx - 35) + "," + (cny - 20) + "s0.6t118,0";
+
+    var rightFingTransform = "T" + (cnx - 35) + "," + (cny - 20) + "s0.6t248,0r180";
+
+    if (!curButt.state) {
+        finger.animate({
+            transform: rightFingTransform,
+            fill: '#248b0b'
+        }, 200, whendone);
+    } else {
+        finger.animate({
+            transform: leftFingTransform,
+            fill: '#98180e'
+        }, 200, whendone);
+    }
+}
+
+
+
+/**
+ * Move the arrow as if it is pressing the button  
+ */
+function moveArrow() {
+    var curButt = buttons[i % buttons.length];
+
+    var whendone = function () {
+            bp.event('animationEnded-MoveArrow');
+        };
+
+    var dir = curButt.state;
+
+    finger.animate({
+        transform: dir ? 'T-4,0...' : 'T4,0...'
+    }, 5, function () {
+        finger.animate({
+            transform: dir ? 'T-9,0...' : 'T9,0...'
+        }, 200, function () {
+            finger.animate({
+                transform: dir ? 'T13,0...' : 'T-13,0...'
+            }, 200, whendone);
+        });
+    });
+
+}
+
+/**  
+ *  Given  : letters is a string of letters
+ *  Returns: a copy of that string, with characters rotated (to the left)
+ */
+function rotate(str) {
+    return str.substring(1, str.length) + str.charAt(0);
+}
+
+/** 
+ * Compute the maximum of the element of an array.
+ */
+Array.max = function (array) {
+    return Math.max.apply(Math, array);
+};
+
+/**
+ * Test idf a sting of 0 and 1 represent a leading state.
+ */
+function isLeading(str) {
+    var leadng0 = ("" + str.match(/0*/)).length;
+
+    var ints = [];
+
+    for (var idx = 0; idx < str.length; idx++) {
+        ints.push(parseInt(str, 2));
+        str = rotate(str);
+    }
+
+    return Array.max(ints) == ints[leadng0];
+}
+
+/** 
+ * Send an event that reports if the current state is leading or not.
+ */
+function reportState() {
+    var str = "";
+
+    for (var idx = 0; idx < buttons.length - 1; idx++) {
+        str += (buttons[(i - idx - 1) % buttons.length].state ? "0" : "1");
+    }
+
+    str += "1";
+
+    if (isLeading(str)) {
+        bp.event("stateIsLeading");
+    } else {
+        bp.event("stateIsNotLeading");
+    }
+} 
+  
+setTimeout("bp.event('start')",10);  
+  
+</script>//--></htmltext><projectblocks>//<!--custom = {};
+
+custom.startanimation_shift = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("Start Shift Animation");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.startanimation_shift = function () {
+    return ['"startAnimation-Shift"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.userWantSwitchAndShift = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("userWantSwitchAndShift");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.userWantSwitchAndShift = function () {
+    return ['"userWantSwitchAndShift"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.userWantShift = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("userWantShift");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.userWantShift = function () {
+    return ['"userWantShift"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.responseStarts = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("responseStarts");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.responseStarts = function () {
+    return ['"responseStarts"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.animationEnded_Shift = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("animationEnded-Shift");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.animationEnded_Shift = function () {
+    return ['"animationEnded-Shift"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.startAnimation_SetArrow = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("startAnimation-SetArrow");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.startAnimation_SetArrow = function () {
+    return ['"startAnimation-SetArrow"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.animationEnded_SetArrow = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("animationEnded-SetArrow");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.animationEnded_SetArrow = function () {
+    return ['"animationEnded-SetArrow"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.responseEnds = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("responseEnds");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.responseEnds = function () {
+    return ['"responseEnds"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.startAnimation_MoveArrow = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("startAnimation-MoveArrow");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.startAnimation_MoveArrow = function () {
+    return ['"startAnimation-MoveArrow"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.animationEnded_MoveArrow = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("animationEnded-MoveArrow");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.animationEnded_MoveArrow = function () {
+    return ['"animationEnded-MoveArrow"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.startAnimation_SwitchCurrentButton = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("startAnimation-SwitchCurrentButton");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.startAnimation_SwitchCurrentButton = function () {
+    return ['"startAnimation-SwitchCurrentButton"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.animationEnded_SwitchCurrentButton = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("animationEnded-SwitchCurrentButton");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.animationEnded_SwitchCurrentButton = function () {
+    return ['"animationEnded-SwitchCurrentButton"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.AdversaryMovesNext = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("AdversaryMovesNext");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.AdversaryMovesNext = function () {
+    return ['"AdversaryMovesNext"', Blockly.JavaScript.ORDER_NONE];
+}
+
+custom.stateIsLeading = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("stateIsLeading");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.stateIsLeading = function () {
+    return ['"stateIsLeading"', Blockly.JavaScript.ORDER_NONE];
+}
+
+custom.stateIsNotLeading = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("stateIsNotLeading");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.stateIsNotLeading = function () {
+    return ['"stateIsNotLeading"', Blockly.JavaScript.ORDER_NONE];
+}//--></projectblocks></xml>

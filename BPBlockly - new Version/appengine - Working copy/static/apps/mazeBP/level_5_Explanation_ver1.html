@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<style>
+p
+{
+font-size:125%;
+font-weight:500;
+}
+</style>
+<html>
+  <body>
+    <p>
+      In this level we have seen two scenarios.</br></br>
+	  The first scenario is responsible for handling a left turn.</br>
+	  The scenario waits for the event, 'path left' and then requests to 'turn left' and 'move forward'.</br>
+    </p>
+		<!--<img src="../../media/level5_part1.JPG">-->
+    <p>
+	  <!--When this event is initiated the scenario is notified and can continue with it's execution.</br>-->
+	  The second scenario is responsible for moving the pegman forward.<br>
+    </p>
+		<!--<img src="../../media/level5_part2.JPG">-->
+    <p>
+		The 'turn left' event has a higher priority than 'move forward'. 
+		Therefore when both events are requested the turn event is triggered.
+		
+		<!--In this maze layout it is preferable to make a turn when possible.<br>
+		Therefore a <em>turn left/right</em> event is in a higher priority than <em>move forward</em>, 
+		That is if both a <em>turn left/right</em> and a <em>move forward</em> are possible,the turn event will be initiated.-->
+	</p>
+	<p>
+      Let's continue to the next level!
+    </p>
+  </body>
+</html>

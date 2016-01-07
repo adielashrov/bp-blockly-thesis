@@ -1,0 +1,53 @@
+bp.addBThread('', 100, function () {
+    var blocked_events = [];
+    var breakupon_events = [];
+
+
+    breakupon1: {
+        breakupon_events.push(('left'))
+        while (true) {
+            Maze.checkTimeout('9');
+            yield({
+                request: [('forward')],
+                wait: breakupon_events,
+                block: blocked_events
+            });
+            if ((breakupon_events[0] == bp.lastEvent) && ([('forward')].indexOf(bp.lastEvent) == -1)) break breakupon1
+        }
+
+    }
+    breakupon_events.pop()
+    while (true) {
+        Maze.checkTimeout('13');
+        yield({
+            request: [('right')],
+            wait: breakupon_events,
+            block: blocked_events
+        });
+    }
+
+});
+bp.addBThread('', 100, function () {
+    var blocked_events = [];
+    var breakupon_events = [];
+
+    while (true) {
+        Maze.checkTimeout('1');
+        yield({
+            request: [],
+            wait: breakupon_events.concat([('forward')]),
+            block: blocked_events
+        });
+        yield({
+            request: [],
+            wait: breakupon_events.concat([('forward')]),
+            block: blocked_events
+        });
+        yield({
+            request: [('left')],
+            wait: breakupon_events,
+            block: blocked_events
+        });
+    }
+
+});

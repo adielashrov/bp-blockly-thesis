@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="google" value="notranslate">
+  <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Blockly : Maze</title>
+  <link rel="stylesheet" type="text/css" href="../common.css">
+  <link rel="stylesheet" type="text/css" href="style.css">  
+  <script type="text/javascript;version=1.7" src="../_soy/soyutils.js"></script>
+  <script type="text/javascript;version=1.7" src="../common.js"></script>
+  <script type="text/javascript;version=1.7" src="bpjs.js"></script>
+  <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+  <!--<script src="../BP_Code/apps/lib/jquery-1.11.1.min.js"></script>Added jQuery power-->
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+   google.load("jquery", "1.7.0");
+   google.load("jqueryui", "1.7.0");
+  </script>
+  <script type="text/javascript;version=1.7" src="versionController.js"></script>
+  <script type="text/javascript;version=1.7" src="msgDisplay.js"></script>
+  <script type="text/javascript;version=1.7" src="logger.js"></script>
+  <script type="text/javascript;version=1.7" src="maze.js"></script>
+  <script type="text/javascript;version=1.7" src="/storage.js"></script>
+</head>
+<body>
+  <script>
+	// In Firefox, the true version is after "Firefox" 
+	var verOffset = navigator.userAgent.indexOf("Firefox");
+	if(verOffset != -1) {//This is a Firefox browser
+		var fullVersion = navigator.userAgent.substring(verOffset + 8);
+		if(parseInt(fullVersion) < 16)//Firefox version is not up to date, smaller than 16.
+		{
+			document.write('<h1>Please open BP-Blockly-Maze using the Mozilla Firefox Browser version 27.0 at least.</h1>'+
+			'<p>Have fun and good luck!</P>');
+		}
+	}
+	else {//Not a firefox browser
+		document.write('<h1>Please open BP-Blockly-Maze using a current version of the Mozilla Firefox Browser.</h1>'+
+		'<p>Have fun and good luck!</P>');
+	}
+  </script>
+  <!--Notice that we don't enter the javaScript version 1.7 in Chorme/IT ...yet-->
+  <script type="text/javascript;version=1.7">
+    document.write(mazepage.start({}, null,
+        {lang: BlocklyApps.LANG,
+         level: Maze.LEVEL,
+         skin: Maze.SKIN_ID,
+         langSrc: BlocklyApps.LANGUAGES[BlocklyApps.LANG][2]}));
+  </script>
+</body>
+</html>

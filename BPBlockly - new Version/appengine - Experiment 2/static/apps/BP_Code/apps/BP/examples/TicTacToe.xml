@@ -1,0 +1,254 @@
+<xml xmlns="http://www.w3.org/1999/xhtml"><block type="controls_whileUntil" inline="false" x="101" y="0"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="bp_dowhileblocking" inline="false"><value name="events"><block type="bp_all_O_events"></block></value><statement name="code"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="bp_all_X_events"></block></value></block></statement><next><block type="bp_dowhileblocking" inline="false"><value name="events"><block type="bp_all_X_events"></block></value><statement name="code"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="bp_all_O_events"></block></value></block></statement></block></next></block></statement></block><block type="bp_parametrized" inline="true" x="103" y="178"><mutation><arg name="square"></arg></mutation><value name="VALUES"><block type="bp_all_squares"></block></value><statement name="STACK"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="bp_event_click" inline="false"><value name="EVENT"><block type="variables_get"><title name="VAR">square</title></block></value></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="bp_event_X" inline="false"><value name="EVENT"><block type="variables_get"><title name="VAR">square</title></block></value></block></value></block></next></block></statement></block><block type="bp_parametrized" inline="true" x="103" y="312"><mutation><arg name="square"></arg></mutation><value name="VALUES"><block type="bp_all_squares"></block></value><statement name="STACK"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="lists_create_with" inline="true"><mutation items="2"></mutation><value name="ADD0"><block type="bp_event_X" inline="false"><value name="EVENT"><block type="variables_get"><title name="VAR">square</title></block></value></block></value><value name="ADD1"><block type="bp_event_O" inline="false"><value name="EVENT"><block type="variables_get"><title name="VAR">square</title></block></value></block></value></block></value><next><block type="bp_dowhileblocking" inline="false"><value name="events"><block type="lists_create_with" inline="true"><mutation items="2"></mutation><value name="ADD0"><block type="bp_event_X" inline="false"><value name="EVENT"><block type="variables_get"><title name="VAR">square</title></block></value></block></value><value name="ADD1"><block type="bp_event_O" inline="false"><value name="EVENT"><block type="variables_get"><title name="VAR">square</title></block></value></block></value></block></value><statement name="code"><block type="scoped_wait" inline="false"></block></statement></block></next></block></statement></block><block type="bp_parametrized" inline="true" x="109" y="503"><mutation><arg name="perm"></arg></mutation><value name="VALUES"><block type="bp_perms"></block></value><statement name="STACK"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="bp_event_X" inline="false"><value name="EVENT"><block type="lists_getIndex" inline="true"><mutation statement="false" at="true"></mutation><title name="MODE">GET</title><title name="WHERE">FROM_START</title><value name="VALUE"><block type="variables_get"><title name="VAR">perm</title></block></value><value name="AT"><block type="math_number"><title name="NUM">1</title></block></value></block></value></block></value><next><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="bp_event_X" inline="false"><value name="EVENT"><block type="lists_getIndex" inline="true"><mutation statement="false" at="true"></mutation><title name="MODE">GET</title><title name="WHERE">FROM_START</title><value name="VALUE"><block type="variables_get"><title name="VAR">perm</title></block></value><value name="AT"><block type="math_number"><title name="NUM">2</title></block></value></block></value></block></value><next><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="bp_event_X" inline="false"><value name="EVENT"><block type="lists_getIndex" inline="true"><mutation statement="false" at="true"></mutation><title name="MODE">GET</title><title name="WHERE">FROM_START</title><value name="VALUE"><block type="variables_get"><title name="VAR">perm</title></block></value><value name="AT"><block type="math_number"><title name="NUM">3</title></block></value></block></value></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="bp_event_XWin"></block></value></block></next></block></next></block></next></block></statement></block><block type="bp_parametrized" inline="true" x="113" y="711"><mutation><arg name="perm"></arg></mutation><value name="VALUES"><block type="bp_perms"></block></value><statement name="STACK"><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="bp_event_O" inline="false"><value name="EVENT"><block type="lists_getIndex" inline="true"><mutation statement="false" at="true"></mutation><title name="MODE">GET</title><title name="WHERE">FROM_START</title><value name="VALUE"><block type="variables_get"><title name="VAR">perm</title></block></value><value name="AT"><block type="math_number"><title name="NUM">1</title></block></value></block></value></block></value><next><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="bp_event_O" inline="false"><value name="EVENT"><block type="lists_getIndex" inline="true"><mutation statement="false" at="true"></mutation><title name="MODE">GET</title><title name="WHERE">FROM_START</title><value name="VALUE"><block type="variables_get"><title name="VAR">perm</title></block></value><value name="AT"><block type="math_number"><title name="NUM">2</title></block></value></block></value></block></value><next><block type="scoped_wait" inline="false"><value name="WAIT-FOR"><block type="bp_event_O" inline="false"><value name="EVENT"><block type="lists_getIndex" inline="true"><mutation statement="false" at="true"></mutation><title name="MODE">GET</title><title name="WHERE">FROM_START</title><value name="VALUE"><block type="variables_get"><title name="VAR">perm</title></block></value><value name="AT"><block type="math_number"><title name="NUM">3</title></block></value></block></value></block></value><next><block type="scoped_request" inline="false"><value name="REQUEST"><block type="bp_event_OWin"></block></value></block></next></block></next></block></next></block></statement></block><block type="scoped_request" inline="false" x="112" y="945"><value name="REQUEST"><block type="bp_event_O" inline="false"><value name="EVENT"><block type="math_number"><title name="NUM">22</title></block></value></block></value></block><block type="controls_whileUntil" inline="false" x="109" y="1026"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="scoped_request" inline="false"><value name="REQUEST"><block type="lists_create_with" inline="false"><mutation items="4"></mutation><value name="ADD0"><block type="bp_event_O" inline="false"><value name="EVENT"><block type="math_number"><title name="NUM">11</title></block></value></block></value><value name="ADD1"><block type="bp_event_O" inline="false"><value name="EVENT"><block type="math_number"><title name="NUM">13</title></block></value></block></value><value name="ADD2"><block type="bp_event_O" inline="false"><value name="EVENT"><block type="math_number"><title name="NUM">31</title></block></value></block></value><value name="ADD3"><block type="bp_event_O" inline="false"><value name="EVENT"><block type="math_number"><title name="NUM">33</title></block></value></block></value></block></value></block></statement></block><block type="controls_whileUntil" inline="false" x="107" y="1196"><title name="MODE">WHILE</title><value name="BOOL"><block type="logic_boolean"><title name="BOOL">TRUE</title></block></value><statement name="DO"><block type="scoped_request" inline="false"><value name="REQUEST"><block type="lists_create_with" inline="false"><mutation items="4"></mutation><value name="ADD0"><block type="bp_event_O" inline="false"><value name="EVENT"><block type="math_number"><title name="NUM">12</title></block></value></block></value><value name="ADD1"><block type="bp_event_O" inline="false"><value name="EVENT"><block type="math_number"><title name="NUM">21</title></block></value></block></value><value name="ADD2"><block type="bp_event_O" inline="false"><value name="EVENT"><block type="math_number"><title name="NUM">23</title></block></value></block></value><value name="ADD3"><block type="bp_event_O" inline="false"><value name="EVENT"><block type="math_number"><title name="NUM">32</title></block></value></block></value></block></value></block></statement></block><htmltext>//<!--<style type="text/css">
+	[type=button] {width:80px; height:80px; font:bold 50px BRITANNIC;}
+</style>
+
+<br /><table align="center" border="2" cellpadding="2" cellspacing="2" >
+	<tbody>
+		<tr>
+			<td>
+				<input type="button" onclick="bp.event('click-11');"  
+				  when_markO-11 = "value='O'; style.color='red';"
+				  when_markX-11 = "value='X'; style.color='blue';"
+				/>
+			</td>
+			<td>
+				<input type="button" onclick="bp.event('click-12');" 
+				  when_markO-12 = "value='O'; style.color='red';"
+				  when_markX-12 = "value='X'; style.color='blue';"
+				/>
+			</td>
+			<td>
+				<input type="button" onclick="bp.event('click-13');" 
+				  when_markO-13 = "value='O'; style.color='red';"
+				  when_markX-13 = "value='X'; style.color='blue';"
+				/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" onclick="bp.event('click-21');" 
+				  when_markO-21 = "value='O'; style.color='red';"
+				  when_markX-21 = "value='X'; style.color='blue';"				  
+				/>
+			</td>
+			<td>
+				<input type="button" onclick="bp.event('click-22');" 
+				  when_markO-22 = "value='O'; style.color='red';"
+				  when_markX-22 = "value='X'; style.color='blue';"
+				/>
+			</td>
+			<td>
+				<input type="button" onclick="bp.event('click-23');"
+				  when_markO-23 = "value='O'; style.color='red';"
+				  when_markX-23 = "value='X'; style.color='blue';"
+				/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" onclick="bp.event('click-31');" 
+				  when_markO-31 = "value='O'; style.color='red';"
+				  when_markX-31 = "value='X'; style.color='blue';"
+				/>
+			</td>
+			<td>
+				<input type="button" onclick="bp.event('click-32');" 
+				  when_markO-32 = "value='O'; style.color='red';"
+				  when_markX-32 = "value='X'; style.color='blue';"
+				/>
+			</td>
+			<td>
+				<input type="button" onclick="bp.event('click-33');" 
+				  when_markO-33 = "value='O'; style.color='red';"
+				  when_markX-33 = "value='X'; style.color='blue';"
+				/>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<hidden when_Xwin="alert('X player wins !'); restart();" />
+<hidden when_Owin="alert('O player wins !'); restart();" />
+<hidden when_tie="alert('Its a tie'); restart();" />//--></htmltext><projectblocks>//<!--custom = {};
+
+	custom.bp_event_O = {
+	  helpUrl: 'http://www.example.com/',
+	  init: function() {
+		this.setColour(290);
+
+		this.appendValueInput('EVENT')
+			.appendTitle('O', 'EV');
+
+		this.setOutput(true, 'event');
+		this.setTooltip('A user-defined event event');
+	  },
+	};
+
+	Blockly.JavaScript.bp_event_O = function() {
+		return ["'markO-'+"+Blockly.JavaScript.valueToCode(this, 'EVENT', Blockly.JavaScript.ORDER_ATOMIC), Blockly.JavaScript.ORDER_NONE];
+	};
+
+
+	custom.bp_event_X = {
+	  helpUrl: 'http://www.example.com/',
+	  init: function() {
+		this.setColour(290);
+
+		this.appendValueInput('EVENT')
+			.appendTitle('X', 'EV');
+
+		this.setOutput(true, 'event');
+		this.setTooltip('A user-defined event event');
+	  },
+	};
+
+	Blockly.JavaScript.bp_event_X = function() {
+		return ["'markX-'+"+Blockly.JavaScript.valueToCode(this, 'EVENT', Blockly.JavaScript.ORDER_ATOMIC),
+		Blockly.JavaScript.ORDER_NONE];
+	};
+
+
+	custom.bp_event_click = {
+	  helpUrl: 'http://www.example.com/',
+	  init: function() {
+		this.setColour(290);
+
+		this.appendValueInput('EVENT')
+			.appendTitle('click','EV');
+
+		this.setOutput(true, 'event');
+		this.setTooltip('A user-defined event event');
+	  },
+	};
+
+	Blockly.JavaScript.bp_event_click = function() {
+		return ["'click-'+"+Blockly.JavaScript.valueToCode(this, 'EVENT', Blockly.JavaScript.ORDER_ATOMIC),
+		Blockly.JavaScript.ORDER_NONE];
+	};
+
+	custom.bp_event_XWin = {
+	  helpUrl: 'http://www.example.com/',
+	  init: function() {
+		this.setColour(290);
+
+		this.appendDummyInput()
+			.appendTitle('X win', 'EV');
+
+		this.setOutput(true, 'event');
+		this.setTooltip('A user-defined event event');
+	  },
+	};
+
+
+	Blockly.JavaScript.bp_event_XWin = function() {
+		return ['"XWin"',Blockly.JavaScript.ORDER_NONE];
+	};
+
+
+	custom.bp_event_OWin = {
+	  helpUrl: 'http://www.example.com/',
+	  init: function() {
+		this.setColour(290);
+
+		this.appendDummyInput()
+			.appendTitle('O win', 'EV');
+
+		this.setOutput(true, 'event');
+		this.setTooltip('A user-defined event event');
+	  },
+	};
+
+	Blockly.JavaScript.bp_event_OWin = function() {
+		return ['"OWin"',Blockly.JavaScript.ORDER_NONE];
+	};
+
+
+
+	custom.bp_event_tie = {
+	  helpUrl: 'http://www.example.com/',
+	  init: function() {
+		this.setColour(290);
+
+		this.appendDummyInput()
+			.appendTitle('Tie', 'EV');
+
+		this.setOutput(true, 'event');
+		this.setTooltip('A user-defined event event');
+	  },
+	};
+
+	Blockly.JavaScript.bp_event_tie = function() {
+		return ['"tie"',Blockly.JavaScript.ORDER_NONE];
+	};
+
+
+	custom.bp_all_squares = {
+	  helpUrl: 'http://www.example.com/',
+	  init: function() {
+		this.setColour(290);
+
+		this.appendDummyInput()
+			.appendTitle('All Squares', 'EV');
+		this.setOutput(true);
+		this.setTooltip('A user-defined event event');
+	  },
+	};
+
+	Blockly.JavaScript.bp_all_squares = function() {
+		return ["['11','12','13','21','22','23','31','32','33']", Blockly.JavaScript.ORDER_NONE];
+	};
+
+
+	custom.bp_all_X_events = {
+	  helpUrl: 'http://www.example.com/',
+	  init: function() {
+		this.setColour(290);
+
+		this.appendDummyInput()
+			.appendTitle('All X events', 'EV');
+		this.setOutput(true);
+		this.setTooltip('A user-defined event event');
+	  },
+	};
+
+	Blockly.JavaScript.bp_all_X_events = function() {
+		return ["['markX-11','markX-12','markX-13','markX-21','markX-22','markX-23','markX-31','markX-32','markX-33']", Blockly.JavaScript.ORDER_NONE];
+	};
+
+
+	custom.bp_all_O_events = {
+	  helpUrl: 'http://www.example.com/',
+	  init: function() {
+		this.setColour(290);
+
+		this.appendDummyInput()
+			.appendTitle('All O events', 'EV');
+		this.setOutput(true);
+		this.setTooltip('A user-defined event event');
+	  },
+	};
+
+	Blockly.JavaScript.bp_all_O_events = function() {
+		return ["['markO-11','markO-12','markO-13','markO-21','markO-22','markO-23','markO-31','markO-32','markO-33']", Blockly.JavaScript.ORDER_NONE];
+	};
+	
+
+
+	custom.bp_perms = {
+	  helpUrl: 'http://www.example.com/',
+	  init: function() {
+		this.setColour(290);
+
+		this.appendDummyInput()
+			.appendTitle('All permutations of all lines', 'EV');
+		this.setOutput(true);
+		this.setTooltip('A user-defined event event');
+	  },
+	};
+
+	Blockly.JavaScript.bp_perms = function() {
+		var allPerms = "[[11, 12, 13], [11, 13, 12], [12, 11, 13], [12, 13, 11], [13, 11, 12], [13, 12, 11], [21, 22, 23], [21, 23, 22], [22, 21, 23], [22, 23, 21], [23, 21, 22], [23, 22, 21], [31, 32, 33], [31, 33, 32], [32, 31, 33], [32, 33, 31], [33, 31, 32], [33, 32, 31], [11, 21, 31], [11, 31, 21], [21, 11, 31], [21, 31, 11], [31, 11, 21], [31, 21, 11], [12, 22, 32], [12, 32, 22], [22, 12, 32], [22, 32, 12], [32, 12, 22], [32, 22, 12], [13, 23, 33], [13, 33, 23], [23, 13, 33], [23, 33, 13], [33, 13, 23], [33, 23, 13], [11, 22, 33], [11, 33, 22], [22, 11, 33], [22, 33, 11], [33, 11, 22], [33, 22, 11], [13, 22, 31], [13, 31, 22], [22, 13, 31], [22, 31, 13], [31, 13, 22], [31, 22, 13]]";
+		return [allPerms, Blockly.JavaScript.ORDER_NONE];
+	};
+
+	
+//--></projectblocks></xml>

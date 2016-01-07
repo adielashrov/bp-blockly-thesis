@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Tic-Tac-Toe</title>
+    <style>
+        #tic-tac-toe-11, #tic-tac-toe-12, #tic-tac-toe-13,
+        #tic-tac-toe-21, #tic-tac-toe-22, #tic-tac-toe-23,
+        #tic-tac-toe-31, #tic-tac-toe-32, #tic-tac-toe-33 {
+            width: 80px;
+            height: 80px;
+            margin: 2px 2px 2px 2px;
+            text-align: center;
+            font: bold 30px BRITANNIC;
+        }
+
+    </style>
+    <script type="text/javascript;version=1.7" src="bp.js"></script>
+    <script type="text/javascript;version=1.7">
+        priority = 0;
+        bp = new BProgram();
+    </script>
+    <script type="text/javascript;version=1.7">
+
+        function markX() {
+            while (true) {
+                yield({
+                    wait:[function (e) {
+                        return (e.indexOf("markX") === 0);
+                    }]
+                });
+
+                id = bp.lastEvent.split(":")[1];
+                tb = document.getElementById("tic-tac-toe-" + id);
+                tb.innerHTML = 'X';
+            }
+        }
+        bp.addBThread('markX', priority++, markX);
+
+        function markO() {
+            while (true) {
+                yield({
+                    wait:[function (e) {
+                        return (e.indexOf("markO") === 0);
+                    }]
+                });
+
+                id = bp.lastEvent.split(":")[1];
+                tb = document.getElementById("tic-tac-toe-" + id);
+                tb.innerHTML = 'O';
+            }
+        }
+        bp.addBThread('markO', priority++, markO);
+
+
+        function clear() {
+            while (true) {
+                yield({
+                    wait:[function (e) {
+                        return (e.indexOf("clear") === 0);
+                    }]
+                });
+
+                id = bp.lastEvent.split(":")[1];
+                tb = document.getElementById("tic-tac-toe-" + id);
+                tb.innerHTML = '.';
+            }
+        }
+        bp.addBThread('clear', priority++, clear);
+
+
+        function logger() {
+            while (true) {
+                yield({wait:[function (x) {
+                    return true;
+                }]});
+                console.log(bp.lastEvent);
+            }
+        }
+        bp.addBThread('logger', priority++, logger);
+
+
+        function perm(a) {
+            return [
+                [a[0], a[1], a[2]],
+                [a[0], a[2], a[1]],
+                [a[1], a[0], a[2]],
+                [a[1], a[2], a[0]],
+                [a[2], a[0], a[1]],
+                [a[2], a[1], a[0]]
+            ];
+
+        }
+        lines = [].concat(
+                perm([11, 12, 13]),
+                perm([21, 22, 23]),
+                perm([31, 32, 33]),
+                perm([11, 21, 31]),
+                perm([12, 22, 32]),
+                perm([13, 23, 33]),
+                perm([11, 22, 33]),
+                perm([13, 22, 31])
+        );
+
+        [11, 12, 13, 21, 22, 23, 31, 32, 33].forEach(function(param, param_idx) {
+            bp.addBThread('markXwhenClicked' + param_idx, priority++, function() {
+                yield({
+                    request: [],
+                    wait: [("click:" + param)],
+                    block: []
+                });
+                yield({
+                    request: [("markX:" + param)],
+                    wait: [],
+                    block: []
+                });
+            })
+        });
+
+        function turns() {
+            while (true) {
+                yield({
+                    request: [],
+                    wait: [function(e) {
+                        return (e.indexOf("markX") === 0);
+                    }],
+                    block: [function(e) {
+                        return (e.indexOf("markO") === 0);
+                    }]
+                });
+                yield({
+                    request: [],
+                    wait: [function(e) {
+                        return (e.indexOf("markO") === 0);
+                    }],
+                    block: [function(e) {
+                        return (e.indexOf("markX") === 0);
+                    }]
+                });
+            }
+        }
+        bp.addBThread('turns', priority++, turns);
+        [11, 12, 13, 21, 22, 23, 31, 32, 33].forEach(function(param, param_idx) {
+            bp.addBThread('squareTaken' + param_idx, priority++, function() {
+                yield({
+                    request: [],
+                    wait: ['markX:' + param, 'markO:' + param],
+                    block: []
+                });
+                yield({
+                    request: [],
+                    wait: [],
+                    block: ['markX:' + param, 'markO:' + param]
+                });
+            })
+        });
+        lines.forEach(function(param, param_idx) {
+            bp.addBThread('preventThirdX' + param_idx, priority++, function() {
+                yield({
+                    request: [],
+                    wait: [("markX:" + param[0])],
+                    block: []
+                });
+                yield({
+                    request: [],
+                    wait: [("markX:" + param[1])],
+                    block: []
+                });
+                yield({
+                    request: [("markO:" + param[2])],
+                    wait: [],
+                    block: []
+                });
+            })
+        });
+        lines.forEach(function(param, param_idx) {
+            bp.addBThread('addThirdO' + param_idx, priority++, function() {
+                yield({
+                    request: [],
+                    wait: [("markO:" + param[0])],
+                    block: []
+                });
+                yield({
+                    request: [],
+                    wait: [("markO:" + param[1])],
+                    block: []
+                });
+                yield({
+                    request: [("markO:" + param[2])],
+                    wait: [],
+                    block: []
+                });
+            })
+        });
+
+        function defaultMoves() {
+            while (true) {
+                yield({
+                    request: ['markO:22', 'markO:11', 'markO:13', 'markO:31', 'markO:33', 'markO:12', 'markO:21', 'markO:23', 'markO:32'],
+                    wait: [],
+                    block: []
+                });
+            }
+        }
+        bp.addBThread('defaultMoves', priority++, defaultMoves);
+
+
+    </script>
+</head>
+<body>
+<div align=center style="vertical-align: middle">
+    <button id="tic-tac-toe-11" onClick="bp.event('click:11');"> .</button>
+    <button id="tic-tac-toe-12" onClick="bp.event('click:12');"> .</button>
+    <button id="tic-tac-toe-13" onClick="bp.event('click:13');"> .</button>
+    <br/>
+    <button id="tic-tac-toe-21" onClick="bp.event('click:21');"> .</button>
+    <button id="tic-tac-toe-22" onClick="bp.event('click:22');"> .</button>
+    <button id="tic-tac-toe-23" onClick="bp.event('click:23');"> .</button>
+    <br/>
+    <button id="tic-tac-toe-31" onClick="bp.event('click:31');"> .</button>
+    <button id="tic-tac-toe-32" onClick="bp.event('click:32');"> .</button>
+    <button id="tic-tac-toe-33" onClick="bp.event('click:33');"> .</button>
+</div>
+</body>
+</html>

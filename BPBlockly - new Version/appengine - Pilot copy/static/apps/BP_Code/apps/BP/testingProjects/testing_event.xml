@@ -1,0 +1,97 @@
+<xml xmlns="http://www.w3.org/1999/xhtml"><htmltext>//<!--<bt>
+<br>
+
+<center style="font-size: x-large"
+  	when_addHot  = 'innerHTML += "<span style=\"color:black\">addHot</span><br>"'
+	when_addCold = 'innerHTML += "<span style=\"padding-left:100px\">addCold</span><br>"'
+> //--></htmltext><projectblocks>//<!--custom = {};
+
+custom.bp_event_e1 = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("e1");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.bp_event_e1 = function () {
+    return ['"e1"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.bp_event_e2 = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("e2");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.bp_event_e2 = function () {
+    return ['"e2"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.bp_event_e3 = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("e3");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.bp_event_e3 = function () {
+    return ['"e3"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.bp_event_e4 = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("e4");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.bp_event_e4 = function () {
+    return ['"e4"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.bp_event_e5 = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("e5");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.bp_event_e5 = function () {
+    return ['"e5"', Blockly.JavaScript.ORDER_NONE];
+};
+
+custom.bp_event_e6 = {
+  helpUrl: 'http://www.example.com/',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendTitle("e6");
+    this.setOutput(true, 'event');
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript.bp_event_e6 = function () {
+    return ['"e6"', Blockly.JavaScript.ORDER_NONE];
+};//--></projectblocks></xml>

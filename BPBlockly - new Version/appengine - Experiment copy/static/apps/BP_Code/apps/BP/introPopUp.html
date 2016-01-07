@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  	<script type="text/javascript">
+   		google.load("jquery", "1.7.0");
+   		google.load("jqueryui", "1.7.0");
+  	</script>
+	<script type="text/javascript;version=1.7">
+		var getUrlVars = function() {
+			var vars = {};
+			var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+			vars[key] = value;
+			});
+			return vars;
+		};
+		
+		var initPage = function() {
+			var tVersion = getUrlVars()["ver"];
+			var tFrameDiv = document.createElement("div");
+			tFrameDiv.id = "iFrameDiv";
+			var tFrame = document.createElement('iframe');
+			tFrame.setAttribute('width', '720');
+			tFrame.setAttribute('height', '405');
+			tFrame.setAttribute('frameborder','0');
+			tFrame.setAttribute('allowFullScreen', '');
+			if (tVersion == "1") {
+				tFrame.src = "//www.youtube.com/embed/7NqubEB9D3k";
+			} else if (tVersion == "2") {
+				tFrame.src = "//www.youtube.com/embed/YE-_sUyAGbo";
+			} else {
+	    		tVersion = "1";
+	    		tFrame.src = "//www.youtube.com/embed/7NqubEB9D3k";
+			}
+			tFrameDiv.appendChild(tFrame);
+			document.body.appendChild(tFrameDiv);
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<h1>Introduction video - BP Code development environment</h1>
+	</div>
+	<!--<div id="iframeDiv">
+		Version 1 - <iframe width="560" height="315" src="//www.youtube.com/embed/zowJjAyfEFA" frameborder="0" allowfullscreen></iframe>-->
+		<!--<iframe width="560" height="315" src="//www.youtube.com/embed/44EYHtRlBSo" frameborder="0" allowfullscreen></iframe></div>-->
+		<script type="text/javascript;version=1.7">
+			initPage();
+		</script>
+	<div>
+		<p><font size="5">The BP code workspace is located in the previous tab</font></p>
+		<button id="questionnaireButton" type="button" >Go to questionnaire!</button>
+		<script type="text/javascript">
+			var button = document.getElementById('questionnaireButton');
+			button.addEventListener("click", function(){
+				
+				logText = window.localStorage.getItem("logText");
+    			var logTextEncoded = encodeURI(logText);
+    			//var  dataAsString = "xml=" + logTextEncoded;  //Name value Pair
+    			var dataAsArray = {xml:logTextEncoded}; //Array 
+    			window.jQuery.ajax({
+        			url : "/storage",
+        			type: "POST",
+        			data : dataAsArray,
+        			success: function(data, textStatus, jqXHR)
+        			{
+            			//data - response from server
+            			console.log(jqXHR);
+            			//alert( "key: " + data);
+            			window.localStorage.setItem("remoteStorageKey", data);
+            			var win;
+            			var tVersion = getUrlVars()["ver"];
+            			if (tVersion == "1"){
+            				/*win = window.open("https://docs.google.com/forms/d/1cJXysWIv2jTewQ9Y_dw_1nJS45JqC2jQ6Zurigywfw0/viewform?entry.61940968&entry.839754075&entry.1103778862=" + data,'_blank');*/
+							win = window.open("https://docs.google.com/forms/d/19vat_n3riG8ZFa6wUkTgvuqrQQb7lSZP9vgZmG2x4co/viewform?entry.561146712&entry.1103778862=" + data, '_blank');
+            				
+            			} else if (tVersion == "2") {
+            				/*win = window.open("https://docs.google.com/forms/d/14dOT042UK8uPGt4kxnxg0sZATqsOPnSa5IZ6BfA8NS0/viewform?entry.61940968&entry.839754075&entry.1103778862=" + data,'_blank');*/
+							win = window.open("https://docs.google.com/forms/d/1iaBU_HbCsxNSTNU7AeLG9hRjoxK5f0f8sTrAsLjrwUs/viewform?entry.1373783260&entry.1103778862=" + data, '_blank');
+            				
+            			}
+            			else{//Default is version 1
+            				/*win = window.open("https://docs.google.com/forms/d/1cJXysWIv2jTewQ9Y_dw_1nJS45JqC2jQ6Zurigywfw0/viewform?entry.61940968&entry.839754075&entry.1103778862=" + data, '_blank');*/
+            				win = window.open("https://docs.google.com/forms/d/19vat_n3riG8ZFa6wUkTgvuqrQQb7lSZP9vgZmG2x4co/viewform?entry.561146712&entry.1103778862=" + data, '_blank');
+            			}
+						win.focus();
+        			},
+        			error: function (jqXHR, textStatus, errorThrown)
+					{
+             			//data - error from server
+            			var responseText = jQuery.parseJSON(jqXHR.responseText);
+            			console.log(responseText);
+            			window.localStorage.setItem("responseText", responseText);
+        			}
+    			});
+			});
+		</script>
+	</div>
+</body>
+</html>

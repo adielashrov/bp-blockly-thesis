@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<style>
+p
+{
+font-size:125%;
+font-weight:500;
+}
+</style>
+<html>
+  <body>
+    
+	<h1 id="title"> </h1>
+	<img id="image"></img>
+	<p id="description"></p>
+	
+	<script type="text/javascript">
+		
+		//TODO: Duplicate code, smelly code ( code copied from bp_util.js)
+		var getUrlVars = function() {
+			var vars = {};
+			var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+				vars[key] = value;
+			});
+			return vars;
+		};
+		
+		tEventName = getUrlVars()["event"];
+		tEventName = tEventName.replace(/_/g, ' ');
+		document.getElementById("title").innerHTML = tEventName;
+		
+		tParapgraphContent = 'The <b>' + tEventName + '</b> block represents the event \''+ tEventName.toLowerCase() + '\'.<br>';
+		document.getElementById("description").innerHTML = tParapgraphContent;
+		
+		tEventName = tEventName.toLowerCase();
+		tEventNameArray = tEventName.split(' ');
+		tImageName = '../blocks_API/';
+		for (var i = 0; i < tEventNameArray.length; i++) {
+			tImageName += tEventNameArray[i] + '_';
+		}
+		tImageName = tImageName + 'block.JPG';
+		//+ tEventNameArray[0] + '_' + tEventNameArray[1] + '_' + 'block.JPG';
+		document.getElementById("image").src = tImageName;
+		
+		
+	</script>
+  </body>
+</html>
